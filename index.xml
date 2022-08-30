@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>optstats</title>
-    <link>/</link>
+    <link>https://optstats.github.io/</link>
     <description>Recent content on optstats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 21:37:58 +0530</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 21:37:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/2022/08/about/</link>
+      <link>https://optstats.github.io/2022/08/about/</link>
       <pubDate>Tue, 30 Aug 2022 21:37:58 +0530</pubDate>
       
-      <guid>/2022/08/about/</guid>
+      <guid>https://optstats.github.io/2022/08/about/</guid>
       <description>This is some static page where you can write about yourself.</description>
     </item>
     
     <item>
       <title>Lecture 14 Wasserstein Space</title>
-      <link>/2022/08/lecture-14-wasserstein-space/</link>
+      <link>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/2022/08/lecture-14-wasserstein-space/</guid>
+      <guid>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lecture 13 罚函数法</title>
-      <link>/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</link>
+      <link>https://optstats.github.io/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
-      <guid>/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</guid>
+      <guid>https://optstats.github.io/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</guid>
       <description>导论 罚函数法更加通用，对目标函数和约束没有限制，相比如二次规划要求目标是二次凸，可行方程线性； 基本思想：用无约束优化方法来解决有约束优化问题； 惩罚项：对可行集的刻画，非可行集内的点，有偏离，把这种偏离记录下来，用二次记录偏离值； 罚函数法基本形式 1. 只有等式约束的优化问题 $$min\ f(x)_{x\in S}$$
 $$s.t.\ h_i(x)=0, \ i=1..l$$
 构造关于约束等式的惩罚项$p(x)=\sum_{i=1}^lh_i(x)^2$，如果$x\in S$则$p(x)=0$，如果$x\notin S$则$p(x)\neq 0$；因此得到罚函数
@@ -45,10 +45,10 @@ ${P(x_k,\sigma_k)}$：上升 ${p(x_k)}$：下降 ${f(x_k)}$：上升 聚点收�
     
     <item>
       <title>Lecture 10 对偶理论</title>
-      <link>/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</link>
+      <link>https://optstats.github.io/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</link>
       <pubDate>Sun, 28 Aug 2022 15:01:58 +0530</pubDate>
       
-      <guid>/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://optstats.github.io/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</guid>
       <description>对偶问题基础 为什么要构造原问题的对偶问题？
 非凸问题NP-hard：对偶问题便于计算分析； 对偶问题解与原问题解的关联； 对偶将一系列约束优化转化成更少的约束优化甚至无约束优化； 对偶提供一些新的解法； 如何构造对偶
 拉格朗日对偶 Fenchel对偶 对偶问题与原问题的关系
@@ -64,10 +64,10 @@ $$max\ d(\lambda,\mu)=max_{\lambda\geq 0,\ \mu\in R^n}min_{x\in X}L(x,\lambda,\m
     
     <item>
       <title>Lecture 3 凸函数</title>
-      <link>/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</link>
+      <link>https://optstats.github.io/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</link>
       <pubDate>Sat, 27 Aug 2022 14:01:58 +0530</pubDate>
       
-      <guid>/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://optstats.github.io/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</guid>
       <description>凸函数定义 在凸集上定义的关系；
 几何意义：输入两点凸组合的值在两点函数值的凸组合下方 凹凸关系：一般极大化凹函数问题转化成极小化凸问题； 严格凸：取等，想象输入两点线段上的值，输出等于两点的凸组合，如线性函数，而不是想象函数值水平相等（极特殊情形）；
 常见凸函数 线性函数：既是凹函数也是凸函数，常作为非凸的近似 二次函数：$x^TQx+ax+b$，$Q$半正定 最小二乘$||Ax-b||^2_2$：有$A^TA$半正定 范数：$p\geq 1$，一般在优化问题中，考虑1-范数和2范数较多； 凸函数的性质 凸函数表明其是连续函数； 凸函数$f\iff\phi(\alpha)=f(x+\alpha y)$是凸函数，其中$\phi$是一元函数； 经过$x$沿$y$方向上$\alpha$倍的值 降维的思想，参考boyd讲义； 构成凸函数的一个充要条件：$f(y)\geq f(x)+\nabla f(x)^T(y-x)$ 图像在切平面之上 证明 已知凸函数推不等式：泰勒展开，取$\lambda \rightarrow 0$的极限 满足不等式推凸函数：凸组合 构成凸函数的二阶充要条件 非空开集 二阶可微 任意点处海森矩阵半正定 关于梯度的不等关系关系：泰勒展开 保凸运算 凸函数构成的透视函数 凸函数的非负组合 一组凸函数求最大 凸集与凸函数关联 凸函数的下水平集$\lbrace x|f(x)\leq a\rbrace$是凸集
@@ -78,10 +78,10 @@ m个凸函数的前k大凸函数的和构成的函数是凸函数；</descriptio
     
     <item>
       <title>Lecture 2 凸集</title>
-      <link>/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</link>
+      <link>https://optstats.github.io/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</link>
       <pubDate>Sat, 27 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</guid>
+      <guid>https://optstats.github.io/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</guid>
       <description>引入：凸优化问题 可行域凸集； 局部最优即是全局最优; 最优点处的负梯度方向与凸可行集上任意方向的夹角大于90°，非凸集未必成立； $$-\nabla f(x^\ast)^T(x-x^\ast)\leq0, \forall x\in S$$ 上式也是最优点成立的等价条件； 基本定义 凸集：集合中两点的连线仍在集合内，对$\forall x,y\in C,\ \forall \lambda\in[0,1]$有：$\lambda x+(1-\lambda)y\in C$；
 凸组合：系数非负，且和为1；
 凸包：对任意集合里的点，凸组合构成的集合，是一个凸集，可以理解成将非凸集给填充成一个凸集；
@@ -94,10 +94,10 @@ m个凸函数的前k大凸函数的和构成的函数是凸函数；</descriptio
     
     <item>
       <title>Probability Space</title>
-      <link>/2022/08/probability-space/</link>
+      <link>https://optstats.github.io/2022/08/probability-space/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/2022/08/probability-space/</guid>
+      <guid>https://optstats.github.io/2022/08/probability-space/</guid>
       <description>概率空间/三元组（$\Omega$,$\mathcal{F}$,$\mathcal{P}$） 样本空间：一个非空的任意集合$\Omega\neq \emptyset$，一个实验的所有可能的输出构成的集合； 事件空间：$\sigma$代数，事件是样本空间中一些样本的集合； 概率测度：将事件空间中的事件映射到$[0,1]$； $\sigma$代数 令$\Omega\neq \emptyset$，$\mathbf{P}(\Omega)$是其幂集，如果$\mathcal{F}\subseteq\mathbf{P}(\Omega)$且满足以下性质：
 $\mathcal{F}$包含$\Omega$，即$\Omega \in \mathcal{F}$； $\mathcal{F}$在补运算下是封闭的，即如果$A\in \mathcal{F}$，则$A^c:=\lbrace\Omega\backslash A\rbrace\in \mathcal{F}$； $\mathcal{F}$在可数个并操作下是封闭的，即$A_i\in \mathcal{F}, i=1,2,&amp;hellip;,$则$\bigcup_{i=1}^{\infty}A_i\in \mathcal{F}$； 推论 如果$\mathcal{F}$是一个$\sigma$代数，则其对可数个交操作是封闭的； 假定$\Omega\neq\emptyset$，常见的平凡$\sigma$代数有 $\mathcal{F}=\lbrace\Omega,\emptyset\rbrace$； $\mathcal{F}=\mathbf{P}(\Omega)$； $A\subseteq\Omega$，则$F=\lbrace A,A^c,\emptyset,\Omega\rbrace$是一个$\sigma$代数； $\sigma$代数的生成： 至多可数集合$\Omega$上，可通过可数个集合的划分生成 唯一最小$\sigma$代数 $Borel-\sigma$代数 关于$\Omega$开集的$\sigma$代数，不是由$\Omega$的划分生成；
 概率测度 $\Omega\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数：一些集合的并，概率空间中表现为事件； 函数$P:\mathcal{F}\rightarrow[0,1]$是一个概率测度当其满足： $P(\Omega)=1$ $P$符合$\sigma$可加性（两两不相交的并）：$P(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} p(A_i)$ 测度 $X\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数 函数$\mu:\mathcal{F}\rightarrow[0,\infty]$是一个测度当其满足： $\mu(\empty)=0$ $\mu$符合$\sigma$可加性（两两不相交的并，也称可列(数)可加性）$\lbrace A_i\rbrace_{i=1}^{\infty}\subseteq\mathcal{F}$： $$\mu(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} u(A_i)$$ 支撑 定义 一个随机变量$X$的支撑$S_X\in B$是最小的闭集，该闭集上的概率$P(S_X)$为1； 拓扑空间上的开球$B(x,r)$，在开球上$P(B(x,r))\geq 0$； 离散型随机变量的支撑：$\lbrace x\in dom(X)|p(X=x)\geq 0\rbrace$； 理解 测度是对集合“长度”的一种度量，将其映射到一个实值 $\sigma$代数是一个集合的集合，在概率空间上，其表现为事件集合 拉普拉斯概率：有限样本集合上的古典概型 狄拉克测度 随机变量：是一个样本空间到实数上映射 </description>

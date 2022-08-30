@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on optstats</title>
-    <link>/tags/</link>
+    <link>https://optstats.github.io/tags/</link>
     <description>Recent content in Tags on optstats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Math 612</title>
-      <link>/tags/math-612/</link>
+      <link>https://optstats.github.io/tags/math-612/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/tags/math-612/</guid>
+      <guid>https://optstats.github.io/tags/math-612/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimal Transport</title>
-      <link>/tags/optimal-transport/</link>
+      <link>https://optstats.github.io/tags/optimal-transport/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/tags/optimal-transport/</guid>
+      <guid>https://optstats.github.io/tags/optimal-transport/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex Optimization</title>
-      <link>/tags/convex-optimization/</link>
+      <link>https://optstats.github.io/tags/convex-optimization/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
-      <guid>/tags/convex-optimization/</guid>
+      <guid>https://optstats.github.io/tags/convex-optimization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cxt</title>
-      <link>/tags/cxt/</link>
+      <link>https://optstats.github.io/tags/cxt/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
-      <guid>/tags/cxt/</guid>
+      <guid>https://optstats.github.io/tags/cxt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>$\sigma$ Algebra</title>
-      <link>/tags/%5Csigma-algebra/</link>
+      <link>https://optstats.github.io/tags/%5Csigma-algebra/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/tags/%5Csigma-algebra/</guid>
+      <guid>https://optstats.github.io/tags/%5Csigma-algebra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Measure</title>
-      <link>/tags/measure/</link>
+      <link>https://optstats.github.io/tags/measure/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/tags/measure/</guid>
+      <guid>https://optstats.github.io/tags/measure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Probability Space</title>
-      <link>/tags/probability-space/</link>
+      <link>https://optstats.github.io/tags/probability-space/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>/tags/probability-space/</guid>
+      <guid>https://optstats.github.io/tags/probability-space/</guid>
       <description></description>
     </item>
     
