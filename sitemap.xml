@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/2022/08/about/</loc>
+    <loc>/2022/08/about/</loc>
     <lastmod>2022-08-30T21:37:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>/</loc>
     <lastmod>2022-08-30T21:37:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2022-08-30T21:37:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/lecture-14-wasserstein-space/</loc>
+    <loc>/2022/08/lecture-14-wasserstein-space/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/math-612/</loc>
+    <loc>/tags/math-612/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/optimal-transport/</loc>
+    <loc>/tags/optimal-transport/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/convex-optimization/</loc>
+    <loc>/tags/convex-optimization/</loc>
     <lastmod>2022-08-28T23:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/cxt/</loc>
+    <loc>/tags/cxt/</loc>
     <lastmod>2022-08-28T23:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</loc>
+    <loc>/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</loc>
     <lastmod>2022-08-28T23:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</loc>
+    <loc>/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</loc>
     <lastmod>2022-08-28T15:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</loc>
+    <loc>/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2022-08-27T14:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</loc>
+    <loc>/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</loc>
     <lastmod>2022-08-27T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/%5Csigma-algebra/</loc>
+    <loc>/tags/%5Csigma-algebra/</loc>
     <lastmod>2022-08-16T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/measure/</loc>
+    <loc>/tags/measure/</loc>
     <lastmod>2022-08-16T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/tags/probability-space/</loc>
+    <loc>/tags/probability-space/</loc>
     <lastmod>2022-08-16T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>http://example.org/2022/08/probability-space/</loc>
+    <loc>/2022/08/probability-space/</loc>
     <lastmod>2022-08-16T02:01:58+05:30</lastmod>
   </url>
 </urlset>

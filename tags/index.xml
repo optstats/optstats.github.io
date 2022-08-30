@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on optstats</title>
-    <link>http://example.org/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on optstats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Math 612</title>
-      <link>http://example.org/tags/math-612/</link>
+      <link>/tags/math-612/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/math-612/</guid>
+      <guid>/tags/math-612/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimal Transport</title>
-      <link>http://example.org/tags/optimal-transport/</link>
+      <link>/tags/optimal-transport/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/optimal-transport/</guid>
+      <guid>/tags/optimal-transport/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex Optimization</title>
-      <link>http://example.org/tags/convex-optimization/</link>
+      <link>/tags/convex-optimization/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/convex-optimization/</guid>
+      <guid>/tags/convex-optimization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cxt</title>
-      <link>http://example.org/tags/cxt/</link>
+      <link>/tags/cxt/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/cxt/</guid>
+      <guid>/tags/cxt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>$\sigma$ Algebra</title>
-      <link>http://example.org/tags/%5Csigma-algebra/</link>
+      <link>/tags/%5Csigma-algebra/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/%5Csigma-algebra/</guid>
+      <guid>/tags/%5Csigma-algebra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Measure</title>
-      <link>http://example.org/tags/measure/</link>
+      <link>/tags/measure/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/measure/</guid>
+      <guid>/tags/measure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Probability Space</title>
-      <link>http://example.org/tags/probability-space/</link>
+      <link>/tags/probability-space/</link>
       <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
       
-      <guid>http://example.org/tags/probability-space/</guid>
+      <guid>/tags/probability-space/</guid>
       <description></description>
     </item>
     
