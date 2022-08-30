@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 10 对偶理论 - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Lecture 10 对偶理论">
+<meta itemprop="description" content="Optimization Theory and Algorithm"><meta itemprop="datePublished" content="2022-08-28T15:01:58+05:30" />
+<meta itemprop="dateModified" content="2022-08-28T15:01:58+05:30" />
+<meta itemprop="wordCount" content="61">
+<meta itemprop="keywords" content="cxt,Convex Optimization," /><meta property="og:title" content="Lecture 10 对偶理论" />
+<meta property="og:description" content="Optimization Theory and Algorithm" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-28T15:01:58+05:30" />
+<meta property="article:modified_time" content="2022-08-28T15:01:58+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lecture 10 对偶理论"/>
+<meta name="twitter:description" content="Optimization Theory and Algorithm"/>
+<link rel="stylesheet" type="text/css" media="screen" href="http://example.org/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://example.org/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://example.org/css/dark.css" />
+
+	<script src="http://example.org/js/feather.min.js"></script>
+	
+		<script src="http://example.org/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://example.org/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="optstats" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://example.org/">optstats</a></h1>
+	<div class="site-description"><p>Notebooks</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/optstats" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+    
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+    integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5"
+    crossorigin="anonymous">
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+    integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+    crossorigin="anonymous"></script>
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+            ],
+            throwOnError : false
+        });
+    });
+</script>
+
+
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">28</span>
+							<span class="rest">Aug 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Lecture 10 对偶理论</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<h2 id="对偶问题基础">对偶问题基础</h2>
+<ol start="0">
+<li>
+<p>为什么要构造原问题的对偶问题？</p>
+<ul>
+<li>非凸问题NP-hard：对偶问题便于计算分析；</li>
+<li>对偶问题解与原问题解的关联；</li>
+<li>对偶将一系列约束优化转化成更少的约束优化甚至无约束优化；</li>
+<li>对偶提供一些新的解法；</li>
+</ul>
+</li>
+<li>
+<p>如何构造对偶</p>
+<ul>
+<li>拉格朗日对偶</li>
+<li>Fenchel对偶</li>
+</ul>
+</li>
+<li>
+<p>对偶问题与原问题的关系</p>
+</li>
+<li>
+<p>对偶</p>
+<ul>
+<li>对偶不仅适用于连续优化，整数规划等也适用对偶理论；</li>
+<li>鲁棒优化、锥优化很需要对偶分析</li>
+</ul>
+</li>
+</ol>
+<h2 id="拉格朗日对偶">拉格朗日对偶</h2>
+<ol>
+<li>
+<p>拉格朗日函数 $$L(x,\lambda,\mu)_{x\in X}=f(x)+\sum_i^m \lambda_i g_i(x)+\sum_i^l \mu_i h_i(x),\ \lambda_i\geq 0$$</p>
+<ul>
+<li>将原问题的约束条件转化通过乘子合并为一个新的目标函数，减少约束，只剩$x\in X$；</li>
+<li>对拉格朗日函数关于$x\in X$求最小值，要比原问题带有多个约束要简单，并且给一组$(\lambda,\mu)$的值，就可以得到关于$x$的最小值，最小值是关于$(\lambda,\mu)$的函数；</li>
+</ul>
+</li>
+<li>
+<p>对偶函数 $d(\lambda,\mu)=min\ L(x,\lambda,\mu)_{x\in X},\ \forall\lambda,\mu,\lambda\geq0$</p>
+<ul>
+<li>
+<p>$d(\lambda,\mu)=min\ L(x,\lambda,\mu)_{x\in X}\leq min\ L(x,\lambda,\mu)_{x\in S}\leq min\ f(x)_{x\in S}$
+其中$S$为原问题的可行域（不仅是$x\in X$还有约束条件）</p>
+<ul>
+<li>上式第一个不等号因为在一个可行域大的集合（$S\subseteq X$）里肯定能取到更小的值；</li>
+<li>上式第二个不等式因为在可行域$S$里，两个乘子项部分是$\leq0$的；</li>
+</ul>
+</li>
+<li>
+<p>结论：$\forall\lambda,\mu,\lambda\geq 0$，$d(\lambda,\mu)\leq V(p)$，$V(p)$是原问题最优值，对偶问题是原问题最优值的下界，通过不同的$\lambda,\mu$可以算出不同的下界；</p>
+</li>
+</ul>
+</li>
+<li>
+<p>拉格朗日对偶问题：在$d(\lambda,\mu)$许多个下界中找出最大下界</p>
+<p>$$max\ d(\lambda,\mu)=max_{\lambda\geq 0,\ \mu\in R^n}min_{x\in X}L(x,\lambda,\mu)$$</p>
+<ul>
+<li>如果先对$\lambda,\mu$先求最大，再对$x$求最小呢？：还原成原问题</li>
+<li>原问题可以看成拉格朗日函数先对乘子求最大，然后对变量求最小，即$min\ max$的问题</li>
+<li>对偶问题可以看成拉格朗日函数先对变量求最小，然后对乘子求最大，即$max\ min$的问题</li>
+</ul>
+</li>
+</ol>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/cxt">cxt</a></li>
+							
+							<li class="tag-li"><a href="/tags/convex-optimization">Convex Optimization</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+			
+			<div class="back">
+				<a href="http://example.org/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+			<div class="back">
+				
+			</div></div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Copyright notice </div>
+		
+	</nav>
+</div><script>feather.replace()</script>
+</body>
+</html>

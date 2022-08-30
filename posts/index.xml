@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on optstats</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on optstats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Tue, 30 Aug 2022 21:37:58 +0530</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://example.org/2022/08/about/</link>
+      <pubDate>Tue, 30 Aug 2022 21:37:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/about/</guid>
+      <description>This is some static page where you can write about yourself.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 14 Wasserstein Space</title>
+      <link>http://example.org/2022/08/lecture-14-wasserstein-space/</link>
+      <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/lecture-14-wasserstein-space/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lecture 13 罚函数法</title>
+      <link>http://example.org/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</link>
+      <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/lecture-13-%E7%BD%9A%E5%87%BD%E6%95%B0%E6%B3%95/</guid>
+      <description>导论 罚函数法更加通用，对目标函数和约束没有限制，相比如二次规划要求目标是二次凸，可行方程线性； 基本思想：用无约束优化方法来解决有约束优化问题； 惩罚项：对可行集的刻画，非可行集内的点，有偏离，把这种偏离记录下来，用二次记录偏离值； 罚函数法基本形式 1. 只有等式约束的优化问题 $$min\ f(x)_{x\in S}$$
+$$s.t.\ h_i(x)=0, \ i=1..l$$
+构造关于约束等式的惩罚项$p(x)=\sum_{i=1}^lh_i(x)^2$，如果$x\in S$则$p(x)=0$，如果$x\notin S$则$p(x)\neq 0$；因此得到罚函数
+$$P(x,\sigma)=f(x)+\sigma p(x)=f(x)+\sigma \sum_{i=1}^lh_i(x)^2$$
+可以理解$p(x)$刻画可行性破坏程度，$\sigma$表示惩罚力度；
+因此，产生新的无约束优化问题 $$min\ P(x,\sigma)_{x\in R^n}=f(x)+\sigma p(x)=f(x)+\sigma \sum_{i=1}^l h_i(x)^2$$
+需要注意的是，新的无约束优化问题对$x$没有限制，可行域是$R^n$，而原问题是$x\in S$； 惩罚系数一般从小往大取，如果初始值很大，在非可行域内，罚函数最优值偏离原问题的最优值会很大； 最值分析 $min_{x\in S} f(x)=min_{x\in S}f(x)+\sigma p(x)\geq min_{x\in R^n}f(x)+\sigma p(x)$
+因为无约束优化的可行范围更大，所以无约束优化问题是原问题的一个下界； 无约束惩罚函数的最值是关于$\sigma$的函数，其是原问题的下界，我们想得到一个紧致的下界，所以要关于$\sigma$求max； 罚函数关于$\sigma$的分析 关于$\sigma$是一个单调增函数：$Q(\sigma)=min_x f(x)+\sigma p(x)$，$Q$是原问题最优值的下界； 我们想求关于$\sigma$的最大等价于有：$max_{\sigma} Q(\sigma)\iff lim_{\sigma\rightarrow\infty} Q(\sigma)$ 一般在关于$x$求最优点（一阶梯度和二阶海森矩阵来判断）后得到最优点是关于$\sigma$的表达式，令$\sigma\rightarrow\infty$得到最优点？ 实例结论：目标梯度和约束函数梯度线性相关，则符合KKT条件； 罚函数法的算法 s1：初始值$x_0,\sigma_0,\epsilon,k=1$； s2：迭代求解，先求$min\ P(x,\sigma)$一个可行解$x_k$； s3：如果$\sigma_kp(x_k)\leq\epsilon$则终止，即该解在惩罚项的可接受阈值达到； s4：如果s3未终止，则进行更新转s2继续迭代：更新$\sigma_{k+1}&amp;gt;\sigma_k$，$k=k+1$； 更新$\sigma_{k+1}$的策略 $\sigma_{k+1}=\beta\sigma_{k}$，$\beta$为常数； 考虑为什么：增大幅度取决于$min\ P(x,\sigma)$的求解难度，比如 易解$\sigma_{k+1}=10\sigma_{k}$ 难解$\sigma_{k+1}=2\sigma_{k}$ 罚函数法数学分析（详见拓展阅读） 关于最优解$x_k$序列的函数序列单调性分析
+${P(x_k,\sigma_k)}$：上升 ${p(x_k)}$：下降 ${f(x_k)}$：上升 聚点收敛性质：$x_k$是问题$P(x,\sigma)$的全局最优解，则${x_k}$的任意聚点$\bar x$是$min_{x\in S}\ f(x)$的全局最优解；</description>
+    </item>
+    
+    <item>
+      <title>Lecture 10 对偶理论</title>
+      <link>http://example.org/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Sun, 28 Aug 2022 15:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</guid>
+      <description>对偶问题基础 为什么要构造原问题的对偶问题？
+非凸问题NP-hard：对偶问题便于计算分析； 对偶问题解与原问题解的关联； 对偶将一系列约束优化转化成更少的约束优化甚至无约束优化； 对偶提供一些新的解法； 如何构造对偶
+拉格朗日对偶 Fenchel对偶 对偶问题与原问题的关系
+对偶
+对偶不仅适用于连续优化，整数规划等也适用对偶理论； 鲁棒优化、锥优化很需要对偶分析 拉格朗日对偶 拉格朗日函数 $$L(x,\lambda,\mu)_{x\in X}=f(x)+\sum_i^m \lambda_i g_i(x)+\sum_i^l \mu_i h_i(x),\ \lambda_i\geq 0$$
+将原问题的约束条件转化通过乘子合并为一个新的目标函数，减少约束，只剩$x\in X$； 对拉格朗日函数关于$x\in X$求最小值，要比原问题带有多个约束要简单，并且给一组$(\lambda,\mu)$的值，就可以得到关于$x$的最小值，最小值是关于$(\lambda,\mu)$的函数； 对偶函数 $d(\lambda,\mu)=min\ L(x,\lambda,\mu)_{x\in X},\ \forall\lambda,\mu,\lambda\geq0$
+$d(\lambda,\mu)=min\ L(x,\lambda,\mu)_{x\in X}\leq min\ L(x,\lambda,\mu)_{x\in S}\leq min\ f(x)_{x\in S}$ 其中$S$为原问题的可行域（不仅是$x\in X$还有约束条件）
+上式第一个不等号因为在一个可行域大的集合（$S\subseteq X$）里肯定能取到更小的值； 上式第二个不等式因为在可行域$S$里，两个乘子项部分是$\leq0$的； 结论：$\forall\lambda,\mu,\lambda\geq 0$，$d(\lambda,\mu)\leq V(p)$，$V(p)$是原问题最优值，对偶问题是原问题最优值的下界，通过不同的$\lambda,\mu$可以算出不同的下界；
+拉格朗日对偶问题：在$d(\lambda,\mu)$许多个下界中找出最大下界
+$$max\ d(\lambda,\mu)=max_{\lambda\geq 0,\ \mu\in R^n}min_{x\in X}L(x,\lambda,\mu)$$
+如果先对$\lambda,\mu$先求最大，再对$x$求最小呢？：还原成原问题 原问题可以看成拉格朗日函数先对乘子求最大，然后对变量求最小，即$min\ max$的问题 对偶问题可以看成拉格朗日函数先对变量求最小，然后对乘子求最大，即$max\ min$的问题 </description>
+    </item>
+    
+    <item>
+      <title>Lecture 3 凸函数</title>
+      <link>http://example.org/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sat, 27 Aug 2022 14:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</guid>
+      <description>凸函数定义 在凸集上定义的关系；
+几何意义：输入两点凸组合的值在两点函数值的凸组合下方 凹凸关系：一般极大化凹函数问题转化成极小化凸问题； 严格凸：取等，想象输入两点线段上的值，输出等于两点的凸组合，如线性函数，而不是想象函数值水平相等（极特殊情形）；
+常见凸函数 线性函数：既是凹函数也是凸函数，常作为非凸的近似 二次函数：$x^TQx+ax+b$，$Q$半正定 最小二乘$||Ax-b||^2_2$：有$A^TA$半正定 范数：$p\geq 1$，一般在优化问题中，考虑1-范数和2范数较多； 凸函数的性质 凸函数表明其是连续函数； 凸函数$f\iff\phi(\alpha)=f(x+\alpha y)$是凸函数，其中$\phi$是一元函数； 经过$x$沿$y$方向上$\alpha$倍的值 降维的思想，参考boyd讲义； 构成凸函数的一个充要条件：$f(y)\geq f(x)+\nabla f(x)^T(y-x)$ 图像在切平面之上 证明 已知凸函数推不等式：泰勒展开，取$\lambda \rightarrow 0$的极限 满足不等式推凸函数：凸组合 构成凸函数的二阶充要条件 非空开集 二阶可微 任意点处海森矩阵半正定 关于梯度的不等关系关系：泰勒展开 保凸运算 凸函数构成的透视函数 凸函数的非负组合 一组凸函数求最大 凸集与凸函数关联 凸函数的下水平集$\lbrace x|f(x)\leq a\rbrace$是凸集
+注意是对x，如果是二维，是下水平集投影在x轴上区间； 如果是非凸函数，下水平集投影在x轴上的区间是断开的（因为$f(x)\geq a$）； 反之不成立：下水平集是凸集的不一定是凸函数，想象鹰图； 上图：包含边界$y=f(x)$的上部区域$y\geq f(x)$构成的集合
+几何上看，从边界出发一系列的射线； 对非空闭凸集，投影定理描述的距离函数$f(y)=min\lbrace||y-x||_2,x\in C\rbrace$是凸函数；
+m个凸函数的前k大凸函数的和构成的函数是凸函数；</description>
+    </item>
+    
+    <item>
+      <title>Lecture 2 凸集</title>
+      <link>http://example.org/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</link>
+      <pubDate>Sat, 27 Aug 2022 02:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/lecture-2-%E5%87%B8%E9%9B%86/</guid>
+      <description>引入：凸优化问题 可行域凸集； 局部最优即是全局最优; 最优点处的负梯度方向与凸可行集上任意方向的夹角大于90°，非凸集未必成立； $$-\nabla f(x^\ast)^T(x-x^\ast)\leq0, \forall x\in S$$ 上式也是最优点成立的等价条件； 基本定义 凸集：集合中两点的连线仍在集合内，对$\forall x,y\in C,\ \forall \lambda\in[0,1]$有：$\lambda x+(1-\lambda)y\in C$；
+凸组合：系数非负，且和为1；
+凸包：对任意集合里的点，凸组合构成的集合，是一个凸集，可以理解成将非凸集给填充成一个凸集；
+对非凸的结构凸化：对整数可行集凸包化成一个多边形，利用线性规划解决； 如何构造凸包？ 常见凸集
+超平面$\lbrace x|a^Tx=b,a\neq 0\rbrace$ 半空间$\lbrace x|a^Tx\geq b,a\neq 0\rbrace$ 多面体：多个线性不等式构成的集合区域； 欧几里得球：同boyd讲义，$||u||_2$表示球心为0，半径为1的单位球，球心平移的操作得到$\lbrace x_c+ru|\ ||u||_2\leq1\rbrace$； 椭球：正定矩阵的特征值开方即是椭球的半轴长； 二阶锥： 锥：$x\in C, \lambda\geq 0, \lambda x\in C$ 二阶锥定义：$\lbrace(x,t)|\ ||x||_2\leq t\rbrace$，思考二维$x$构成的几何结构$\sqrt{x_1^2+x_2^2\leq t}$； 半正定锥$S_{+}^n$：$X\geq 0\iff z^TXz\geq 0, \forall z$ 练习：线性规划的最优解组成的集合是凸集； 保凸运算
+两个凸集的交 两个凸集元素的加减构成的集合 一个线性的绝对值不等式可以看成两个半空间的交 放射变换：有偏差的线性变换$f(x)=Ax+b$ 凸集上的放射变换得到集合是凸集 凸集上的逆放射变换得到的集合（原像）是凸集 放缩：想象二维的放缩，如锥束一样； 平移：凸集的移动，不改变凸性； 投影：有种降维操作的感觉，想象三维空间的球凸集，投影到二维平面的圆； 凸集基本性质 投影定理：在非空闭凸集上存在唯一的一点到该集合外的任一点距离最小；
+存在且唯一
+连续函数在有界区域上求最值，存在 投影点的充要条件：$(x-x^\ast)^T(y-x^\ast)\leq 0, \forall x\in C$</description>
+    </item>
+    
+    <item>
+      <title>Probability Space</title>
+      <link>http://example.org/2022/08/probability-space/</link>
+      <pubDate>Tue, 16 Aug 2022 02:01:58 +0530</pubDate>
+      
+      <guid>http://example.org/2022/08/probability-space/</guid>
+      <description>概率空间/三元组（$\Omega$,$\mathcal{F}$,$\mathcal{P}$） 样本空间：一个非空的任意集合$\Omega\neq \emptyset$，一个实验的所有可能的输出构成的集合； 事件空间：$\sigma$代数，事件是样本空间中一些样本的集合； 概率测度：将事件空间中的事件映射到$[0,1]$； $\sigma$代数 令$\Omega\neq \emptyset$，$\mathbf{P}(\Omega)$是其幂集，如果$\mathcal{F}\subseteq\mathbf{P}(\Omega)$且满足以下性质：
+$\mathcal{F}$包含$\Omega$，即$\Omega \in \mathcal{F}$； $\mathcal{F}$在补运算下是封闭的，即如果$A\in \mathcal{F}$，则$A^c:=\lbrace\Omega\backslash A\rbrace\in \mathcal{F}$； $\mathcal{F}$在可数个并操作下是封闭的，即$A_i\in \mathcal{F}, i=1,2,&amp;hellip;,$则$\bigcup_{i=1}^{\infty}A_i\in \mathcal{F}$； 推论 如果$\mathcal{F}$是一个$\sigma$代数，则其对可数个交操作是封闭的； 假定$\Omega\neq\emptyset$，常见的平凡$\sigma$代数有 $\mathcal{F}=\lbrace\Omega,\emptyset\rbrace$； $\mathcal{F}=\mathbf{P}(\Omega)$； $A\subseteq\Omega$，则$F=\lbrace A,A^c,\emptyset,\Omega\rbrace$是一个$\sigma$代数； $\sigma$代数的生成： 至多可数集合$\Omega$上，可通过可数个集合的划分生成 唯一最小$\sigma$代数 $Borel-\sigma$代数 关于$\Omega$开集的$\sigma$代数，不是由$\Omega$的划分生成；
+概率测度 $\Omega\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数：一些集合的并，概率空间中表现为事件； 函数$P:\mathcal{F}\rightarrow[0,1]$是一个概率测度当其满足： $P(\Omega)=1$ $P$符合$\sigma$可加性（两两不相交的并）：$P(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} p(A_i)$ 测度 $X\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数 函数$\mu:\mathcal{F}\rightarrow[0,\infty]$是一个测度当其满足： $\mu(\empty)=0$ $\mu$符合$\sigma$可加性（两两不相交的并，也称可列(数)可加性）$\lbrace A_i\rbrace_{i=1}^{\infty}\subseteq\mathcal{F}$： $$\mu(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} u(A_i)$$ 支撑 定义 一个随机变量$X$的支撑$S_X\in B$是最小的闭集，该闭集上的概率$P(S_X)$为1； 拓扑空间上的开球$B(x,r)$，在开球上$P(B(x,r))\geq 0$； 离散型随机变量的支撑：$\lbrace x\in dom(X)|p(X=x)\geq 0\rbrace$； 理解 测度是对集合“长度”的一种度量，将其映射到一个实值 $\sigma$代数是一个集合的集合，在概率空间上，其表现为事件集合 拉普拉斯概率：有限样本集合上的古典概型 狄拉克测度 随机变量：是一个样本空间到实数上映射 </description>
+    </item>
+    
+  </channel>
+</rss>
