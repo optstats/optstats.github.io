@@ -7,7 +7,54 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/optimal-transport/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 12:29:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/optimal-transport/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 13 Scaling Algorithm for Entropic OT</title>
+      <link>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</link>
+      <pubDate>Wed, 31 Aug 2022 12:29:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</guid>
+      <description>Sinkhorn&amp;rsquo;s Algorithm for Entropic Optimal Transport 对于熵正则最优传输 $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij}\pi_{ij}log\pi_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=a$$ $$\mathbf{\pi}^T\mathcal{1}=b$$
+其最优解唯一，形式为$\pi^\ast_{ij}=u_iK_{ij}v_j$，其中$K_{ij}=exp(c_{ij})\over\epsilon$，且最优传输矩阵
+$$\pi^\ast=Diag(u)KDiag(v)$$
+熵正则最优解形式推导 写出原问题的拉格朗日函数 $$L(\pi,u,v))\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}-u(\pi\mathbf{1}-a)-v(\pi^T\mathbf{1}-b)-\epsilon(\sum_{ij} \pi_{ij}-1)$$
+处于方便计算，上式体现传输矩阵有个正则化约束项，可改写熵正则的目标问题等价$\epsilon\sum\pi log\pi-1$，基于此，可以理解为什么拉格朗日惩罚系数时$\epsilon$；
+对Larg函数求最优点，注意$\pi_{ij}$求导，直接看线性结构的系数（向量分量）；
+$$\frac{\partial L}{\partial\pi_{ij}}=c_{ij}+\epsilon(log\pi_{ij}-1)-u_i-v_j-\epsilon=c_{ij}+\epsilon log\pi_{ij}-u_i-v_j=0$$
+$$log\pi^\ast_{ij}=\frac{-c_{ij}+u_i+v_j}{\epsilon}$$
+$$\pi^\ast_{ij}=exp(\frac{-c_{ij}+u_i+v_j}{\epsilon})=exp(\frac{u_i}{\epsilon})exp(-\frac{c_{ij}}{\epsilon})exp(\frac{v_j}{\epsilon})$$
+Scaling Algorithm
+我们要想求解最优传输矩阵$\pi$，通过上面正则解的推导，得到最优矩阵的元素$K_{ij}$与$u_i,v_j,c_{ij},\epsilon$有关；因此，如果恢复矩阵$\pi$，我们关键需要求解向量$u$和$v$，即产生以下约束问题： $$u= [exp(\frac{u_i}{\epsilon})]$$ $$v= [exp(\frac{v_j}{\epsilon})]$$ $$s.t.\ Diag(u)KDiag(v)\mathcal{1}=a $$ $$Diag(v)K^TDiag(u)\mathcal{1}=b $$
+理解上述式子需要注意：
+$K$矩阵元素与代价矩阵元素有关； 对角阵左乘一个矩阵，等价于矩阵的每行乘对角阵对应元素； 对角阵右乘一个矩阵，等价于矩阵的每列乘对角阵对应元素； $Diag(u)KDiag(v)=\pi$，对于传输矩阵$\pi$的元素$\pi_{ij}=u(i)K_{ij}v(j)$，即$\pi_{ij}$由三部分构成，可以考虑计算结合过程为$K_{ij}$的$i$对应着$u(i)$，$K_{ij}$的$j$对应着$v(j)$； 第四个式子可以看成第三个式子的转置，结合传输矩阵转置与单位列向量乘即对逐列求和可得； 结合以上，我们知道等价于解关于$u$和$v$的方程组： $$Diag(u)Kv=a$$ $$Diag(v)K^Tu=b$$
+对此，交替迭代的Sinkhorn算法如下：
+初始化$v^0=(1,1,,1)^T$； 基于第一个方程更新$u^1$； 基于第二个方程更新$v^1$； 在$l+1$轮，用$v^l$更新$u^l$，根据$u^{l+1}$来更新$v^{l+1}$，得到$(v^{l+1},u^{l+1})$，从而得到相应的$\pi$阵；
+算法的几何解释：
+在两个空间交替投影（找到适合问题的解），一个空间是行和为$a$的矩阵空间，一个空间为行和为$b$的矩阵，算法最终收敛在两个空间相交的地方，即表示行和为$a$且列和为$b$的传输矩阵； 算法理论基础：
+两个闭凸集$C$和$D$，假设在这两个闭凸集上的投影算子$P_C$和$P(D)$，当进行迭代交替的投影时，最终两个投影输出会落在$C\cap D$上； 更多解释可参考Note； </description>
+    </item>
+    
+    <item>
+      <title>Lecture 12 Entropy and Second Law</title>
+      <link>https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/</link>
+      <pubDate>Wed, 31 Aug 2022 10:20:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/</guid>
+      <description>Entropy Regularized Optimal Transport 香农熵：一个分布的香农熵在有限空间$\sum_{i=1}^k p_i=1$为 $$-\sum_i p_ilogp_i$$
+分布越均匀，熵越大，均匀分布的熵最大，分布越偏，熵越小； 对于两个分布的耦合$\pi$，其最优传输问题为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=r$$
+对应的熵正则最优传输为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=r$$
+原始的离散最优传输问题是一个线性规划问题，其最优解在约束凸集的顶点处取得； 分析带有熵正则的最优传输，对于一个耦合，为什么顶点处的熵是零； 如何分析熵正则的最优传输将最优点从边界顶点处推向约束凸集的内部； </description>
+    </item>
+    
+    <item>
+      <title>Optimal Transport</title>
+      <link>https://optstats.github.io/2022/08/optimal-transport/</link>
+      <pubDate>Wed, 31 Aug 2022 08:40:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/optimal-transport/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Lecture 14 Wasserstein Space</title>
       <link>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</link>

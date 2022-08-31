@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 13 Scaling Algorithm for Entropic OT - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Lecture 13 Scaling Algorithm for Entropic OT">
+<meta itemprop="description" content="Math 612 Single Cell Analysis"><meta itemprop="datePublished" content="2022-08-31T12:29:58+05:30" />
+<meta itemprop="dateModified" content="2022-08-31T12:29:58+05:30" />
+<meta itemprop="wordCount" content="61">
+<meta itemprop="keywords" content="Math 612,Optimal Transport," /><meta property="og:title" content="Lecture 13 Scaling Algorithm for Entropic OT" />
+<meta property="og:description" content="Math 612 Single Cell Analysis" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-31T12:29:58+05:30" />
+<meta property="article:modified_time" content="2022-08-31T12:29:58+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lecture 13 Scaling Algorithm for Entropic OT"/>
+<meta name="twitter:description" content="Math 612 Single Cell Analysis"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://optstats.github.io/css/dark.css" />
+
+	<script src="https://optstats.github.io/js/feather.min.js"></script>
+	
+		<script src="https://optstats.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://optstats.github.io/">optstats</a></h1>
+	<div class="site-description"><p>Notebooks</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/optstats" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+    
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+    integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5"
+    crossorigin="anonymous">
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+    integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+    crossorigin="anonymous"></script>
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+            ],
+            throwOnError : false
+        });
+    });
+</script>
+
+
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">31</span>
+							<span class="rest">Aug 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Lecture 13 Scaling Algorithm for Entropic OT</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<h2 id="sinkhorns-algorithm-for-entropic-optimal-transport">Sinkhorn&rsquo;s Algorithm for Entropic Optimal Transport</h2>
+<ol>
+<li>
+<p>对于熵正则最优传输
+$$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij}\pi_{ij}log\pi_{ij}$$
+$$s.t.\ \mathbf{\pi}\mathcal{1}=a$$
+$$\mathbf{\pi}^T\mathcal{1}=b$$</p>
+<p>其最优解唯一，形式为$\pi^\ast_{ij}=u_iK_{ij}v_j$，其中$K_{ij}=exp(c_{ij})\over\epsilon$，且最优传输矩阵</p>
+</li>
+</ol>
+<p>$$\pi^\ast=Diag(u)KDiag(v)$$</p>
+<ol start="2">
+<li>熵正则最优解形式推导
+<ul>
+<li>
+<p>写出原问题的拉格朗日函数
+$$L(\pi,u,v))\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}-u(\pi\mathbf{1}-a)-v(\pi^T\mathbf{1}-b)-\epsilon(\sum_{ij} \pi_{ij}-1)$$</p>
+</li>
+<li>
+<p>处于方便计算，上式体现传输矩阵有个正则化约束项，可改写熵正则的目标问题等价$\epsilon\sum\pi log\pi-1$，基于此，可以理解为什么拉格朗日惩罚系数时$\epsilon$；</p>
+</li>
+<li>
+<p>对Larg函数求最优点，注意$\pi_{ij}$求导，直接看线性结构的系数（向量分量）；</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>$$\frac{\partial L}{\partial\pi_{ij}}=c_{ij}+\epsilon(log\pi_{ij}-1)-u_i-v_j-\epsilon=c_{ij}+\epsilon log\pi_{ij}-u_i-v_j=0$$</p>
+<p>$$log\pi^\ast_{ij}=\frac{-c_{ij}+u_i+v_j}{\epsilon}$$</p>
+<p>$$\pi^\ast_{ij}=exp(\frac{-c_{ij}+u_i+v_j}{\epsilon})=exp(\frac{u_i}{\epsilon})exp(-\frac{c_{ij}}{\epsilon})exp(\frac{v_j}{\epsilon})$$</p>
+<hr>
+<ol start="3">
+<li>
+<p>Scaling Algorithm</p>
+<ul>
+<li>我们要想求解最优传输矩阵$\pi$，通过上面正则解的推导，得到最优矩阵的元素$K_{ij}$与$u_i,v_j,c_{ij},\epsilon$有关；因此，如果恢复矩阵$\pi$，我们关键需要求解向量$u$和$v$，即产生以下约束问题：</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>$$u= [exp(\frac{u_i}{\epsilon})]$$
+$$v= [exp(\frac{v_j}{\epsilon})]$$
+$$s.t.\ Diag(u)KDiag(v)\mathcal{1}=a $$
+$$Diag(v)K^TDiag(u)\mathcal{1}=b $$</p>
+<hr>
+<p>理解上述式子需要注意：</p>
+<ul>
+<li>$K$矩阵元素与代价矩阵元素有关；</li>
+<li>对角阵左乘一个矩阵，等价于矩阵的每行乘对角阵对应元素；</li>
+<li>对角阵右乘一个矩阵，等价于矩阵的每列乘对角阵对应元素；</li>
+<li>$Diag(u)KDiag(v)=\pi$，对于传输矩阵$\pi$的元素$\pi_{ij}=u(i)K_{ij}v(j)$，即$\pi_{ij}$由三部分构成，可以考虑计算结合过程为$K_{ij}$的$i$对应着$u(i)$，$K_{ij}$的$j$对应着$v(j)$；</li>
+<li>第四个式子可以看成第三个式子的转置，结合传输矩阵转置与单位列向量乘即对逐列求和可得；</li>
+</ul>
+<hr>
+<p>结合以上，我们知道等价于解关于$u$和$v$的方程组：
+$$Diag(u)Kv=a$$
+$$Diag(v)K^Tu=b$$</p>
+<hr>
+<p>对此，交替迭代的Sinkhorn算法如下：</p>
+<ul>
+<li>初始化$v^0=(1,1,,1)^T$；</li>
+<li>基于第一个方程更新$u^1$；</li>
+<li>基于第二个方程更新$v^1$；</li>
+</ul>
+<p>在$l+1$轮，用$v^l$更新$u^l$，根据$u^{l+1}$来更新$v^{l+1}$，得到$(v^{l+1},u^{l+1})$，从而得到相应的$\pi$阵；</p>
+<p>算法的几何解释：</p>
+<ul>
+<li>在两个空间交替投影（找到适合问题的解），一个空间是行和为$a$的矩阵空间，一个空间为行和为$b$的矩阵，算法最终收敛在两个空间相交的地方，即表示行和为$a$且列和为$b$的传输矩阵；</li>
+</ul>
+<p>算法理论基础：</p>
+<ul>
+<li>两个闭凸集$C$和$D$，假设在这两个闭凸集上的投影算子$P_C$和$P(D)$，当进行迭代交替的投影时，最终两个投影输出会落在$C\cap D$上；</li>
+<li>更多解释可参考Note；</li>
+</ul>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/math-612">Math 612</a></li>
+							
+							<li class="tag-li"><a href="/tags/optimal-transport">Optimal Transport</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+			
+			<div class="back">
+				<a href="https://optstats.github.io/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+			<div class="back">
+				
+			</div></div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Copyright notice </div>
+		
+	</nav>
+</div><script>feather.replace()</script>
+</body>
+</html>

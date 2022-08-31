@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 02:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 12:29:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Math 612</title>
       <link>https://optstats.github.io/tags/math-612/</link>
-      <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
+      <pubDate>Wed, 31 Aug 2022 12:29:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/math-612/</guid>
       <description></description>
@@ -20,7 +20,7 @@
     <item>
       <title>Optimal Transport</title>
       <link>https://optstats.github.io/tags/optimal-transport/</link>
-      <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
+      <pubDate>Wed, 31 Aug 2022 12:29:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/optimal-transport/</guid>
       <description></description>
@@ -41,6 +41,42 @@
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/cxt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topology</title>
+      <link>https://optstats.github.io/tags/topology/</link>
+      <pubDate>Sun, 21 Aug 2022 10:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/topology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linear Programming</title>
+      <link>https://optstats.github.io/tags/linear-programming/</link>
+      <pubDate>Sat, 20 Aug 2022 07:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/linear-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Operation Research</title>
+      <link>https://optstats.github.io/tags/operation-research/</link>
+      <pubDate>Sat, 20 Aug 2022 07:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/operation-research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EE364a</title>
+      <link>https://optstats.github.io/tags/ee364a/</link>
+      <pubDate>Thu, 18 Aug 2022 11:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/ee364a/</guid>
       <description></description>
     </item>
     

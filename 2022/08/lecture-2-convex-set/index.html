@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 2 Convex Set - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Lecture 2 Convex Set">
+<meta itemprop="description" content="The course note of EE364a."><meta itemprop="datePublished" content="2022-08-18T11:01:58+05:30" />
+<meta itemprop="dateModified" content="2022-08-18T11:01:58+05:30" />
+<meta itemprop="wordCount" content="96">
+<meta itemprop="keywords" content="EE364a,convex optimization," /><meta property="og:title" content="Lecture 2 Convex Set" />
+<meta property="og:description" content="The course note of EE364a." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://optstats.github.io/2022/08/lecture-2-convex-set/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-18T11:01:58+05:30" />
+<meta property="article:modified_time" content="2022-08-18T11:01:58+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lecture 2 Convex Set"/>
+<meta name="twitter:description" content="The course note of EE364a."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://optstats.github.io/css/dark.css" />
+
+	<script src="https://optstats.github.io/js/feather.min.js"></script>
+	
+		<script src="https://optstats.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://optstats.github.io/">optstats</a></h1>
+	<div class="site-description"><p>Notebooks</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/optstats" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+    
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+    integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5"
+    crossorigin="anonymous">
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+    integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+    crossorigin="anonymous"></script>
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+            ],
+            throwOnError : false
+        });
+    });
+</script>
+
+
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">18</span>
+							<span class="rest">Aug 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Lecture 2 Convex Set</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<h3 id="凸集">凸集</h3>
+<ol>
+<li>仿射集：集合内任意两不同点构成的直线集</li>
+</ol>
+<ul>
+<li>
+<p>直线：$x=\theta x_1+(1-\theta)x_2,\ \theta\in R$</p>
+<ul>
+<li>
+<p>从方向向量角度理解直线的形成：如上式，$x_2$作为一点，$x_1-x_2$构成一个方向向量</p>
+</li>
+<li>
+<p>$OC=\alpha OB+(1-\lambda)OA$的推导：点$\mathcal{C}$在线段AB内，点$\mathcal{O}$为直线AB外一点</p>
+<ul>
+<li>$\mathcal{AC=OC-OA}$</li>
+<li>$\mathcal{AB=OB-OA}$</li>
+<li>$\mathcal{AC=\lambda AB}\Rightarrow \mathcal{OC-OA}=\lambda(\mathcal{OB-OA})$</li>
+<li>$\mathcal{OC}=\lambda \mathcal{OB}+(1-\lambda)\mathcal{OA}$</li>
+<li>$\mathcal{OC}$等向量可以看成C的向量坐标</li>
+</ul>
+</li>
+<li>
+<p>二维平面上的直线是一维的，但是直线方程是二维的（从$x_i$的下标看），所以n维空间的直线是$n-1$维的，但方程是到$x_n$的；</p>
+</li>
+</ul>
+</li>
+<li>
+<p>仿射集可以表示成一个线性方程组的解（从定义出发思考）</p>
+</li>
+</ul>
+<ol start="2">
+<li>凸集</li>
+</ol>
+<ul>
+<li>线段：凸集的定义就是两点之间的点仍在该集合内，$x=\theta x_1+(1-\theta)x_2,\ \theta \in [0,1]$；</li>
+<li>凸组合：全部系数和为1且非负；</li>
+<li>凸包：凸集内点构成的全部凸组合集合；</li>
+<li>锥：$x=\theta x_0, \theta\geq 0$；</li>
+<li>锥组合：每个点系数非负构成的组合；</li>
+<li>凸锥：系数和为1；</li>
+<li>超平面：仿射且凸，$\lbrace x|a^Tx=b\rbrace(a\neq0)$，向量$a$定义平面的法向（也可以看做平面的方向）</li>
+<li>半空间：$\lbrace x|a^Tx\leq b\rbrace(a\neq0)$</li>
+<li>欧几里得球：$B(x_c,r)=\lbrace x|\ ||x-x_c||_2\leq r\rbrace$</li>
+<li>椭球：$\lbrace x|(x-x_0)^TP^{-1}(x-x_0)\leq 1\rbrace$，$P\in S_{++}^n$，即对称正定</li>
+<li>范数球：可以看成欧球的推广，$NB(x_c,r)=\lbrace x|\ ||x-x_c||\leq r\rbrace$</li>
+<li>范数锥：$\lbrace(x,t)|\ ||x||\leq t\rbrace$，欧几里得范数锥也称二阶锥</li>
+<li>多面体：有限个线性不等式（半空间）和等式（超平面）构成的集合</li>
+<li>半正定锥$\mathbf{S}^n_+$：<strong>关于矩阵对象的凸性研究</strong>
+<ul>
+<li>$\mathbf{S}^n$表示一个对称的$n*n$矩阵</li>
+<li>半正定的$n*n$矩阵为一个凸锥：$\mathbf{S}^n_+=\lbrace X\in \mathbf{S}^n|X\geq 0\rbrace$</li>
+<li>正定：$\mathbf{S}^n_{++}=\lbrace X\in \mathbf{S}^n|X&gt;0\rbrace$</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>保凸运算</p>
+<ul>
+<li>如何构建一个凸集：从常见凸集结合保凸运算构造；</li>
+<li>任意凸集的交</li>
+<li>基于凸集的前提下，其仿射函数的像或原像都是凸的；
+<ul>
+<li>线性矩阵不等式</li>
+<li>放缩变换、投影</li>
+<li>双曲锥</li>
+</ul>
+</li>
+<li>透视函数：$P: R^{n+1}\rightarrow R^n$
+<ul>
+<li>$P(x,t)=x/t \ \ dom(P)=\lbrace(x,t)|t&gt;0\rbrace$</li>
+</ul>
+</li>
+<li>线性分数函数：$f:R^n\rightarrow R^m$
+<ul>
+<li>$f(x)=\frac{Ax+b}{c^Tx+d}\ \ dom(f)=\lbrace x|c^Tx+d&gt;0\rbrace$</li>
+</ul>
+</li>
+<li>凸集的透视函数和线性分数函数的像或原像都是凸的；</li>
+<li>适当锥(<strong>广义不等性</strong>)
+<ul>
+<li>非负多项式</li>
+<li>每个元素非负的向量集合$\mathbf{R}^n_+$</li>
+<li><strong>最小值和极小值</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>分离超平面定理：两个非空的不相交凸集，存在超平面可以分开两个凸集；<strong>注意更严格划分的要求</strong></p>
+</li>
+<li>
+<p>支撑超平面定理：凸集的每个边界点都存在一个支撑超平面，考虑平滑凸和分段线性凸的场景；</p>
+<ul>
+<li>边界点$x_0$，有$\lbrace x|a^T=a^Tx_0\rbrace$且对凸集内的所有$x$有$a^Tx\leq a^Tx_0, a\neq 0$</li>
+</ul>
+</li>
+<li>
+<p><strong>对偶锥与广义不等性</strong></p>
+</li>
+</ol>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/ee364a">EE364a</a></li>
+							
+							<li class="tag-li"><a href="/tags/convex-optimization">convex optimization</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+			
+			<div class="back">
+				<a href="https://optstats.github.io/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+			<div class="back">
+				
+			</div></div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Copyright notice </div>
+		
+	</nav>
+</div><script>feather.replace()</script>
+</body>
+</html>

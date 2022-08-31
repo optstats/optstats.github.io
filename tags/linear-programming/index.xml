@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Programming on optstats</title>
+    <link>https://optstats.github.io/tags/linear-programming/</link>
+    <description>Recent content in Linear Programming on optstats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sat, 20 Aug 2022 07:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/linear-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性规划-2</title>
+      <link>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-2/</link>
+      <pubDate>Sat, 20 Aug 2022 07:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-2/</guid>
+      <description>线性规划的解 可行解：满足约束条件和变量非负要求的解 ；
+可行域（集）：全体可行解构成的区域（集合）；
+最优解：使目标函数取得最值的可行解；
+基：线性约束方程组的系数矩阵$A\in R^{m*n},m\leq n$的秩为m，则$A$的满秩子阵$B\in R^{m*m}$为一个基；
+基变量 非基变量 基向量 基解：通过一确定的基，令非基变量为0，由约束方程组解出来的基变量，称为基解； 基可行解：满足变量非负条件的基解，基解不一定是基可行解； 可行基：对应于基可行解的基； 图解法 适用二维的线性规划问题，但几何直观
+步骤：
+画出可行域 线性规划若存在可行域，则是个凸集 画出目标函数 确定最优解：如果最优解存在，则一定在可行域的顶点取到 唯一最优解 无穷多最优解：目标函数平行于可行域的边界 无可行解：可行域和目标最值方向不一致 无界解：可行域是无界的 单纯性法 凸集的顶点：不能用凸组合表示的点 </description>
+    </item>
+    
+    <item>
+      <title>线性规划-1</title>
+      <link>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-1/</link>
+      <pubDate>Sat, 20 Aug 2022 05:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-1/</guid>
+      <description>规划问题的数学模型三要素 决策变量 目标函数 约束条件 线性规划 1. 定义 目标函数式决策变量的线性函数 约束条件是决策变量的线性不等式或线性等式 2. 标准型 $max\ c^Tx$
+$s.t.\ Ax=b$
+$x\geq 0$
+极大化目标 全部约束为等式约束，且右端为非负 决策变量非负 3. 转换成标准型的操作 不等约束的转换： 加松弛变量 减剩余变量 松弛变量和剩余变量在目标函数中的系数为0 乘负号操作 min2max 变量为负 b为负 无约束变量的双替换 </description>
+    </item>
+    
+  </channel>
+</rss>

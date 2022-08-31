@@ -7,7 +7,54 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 21:37:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 12:29:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 13 Scaling Algorithm for Entropic OT</title>
+      <link>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</link>
+      <pubDate>Wed, 31 Aug 2022 12:29:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</guid>
+      <description>Sinkhorn&amp;rsquo;s Algorithm for Entropic Optimal Transport 对于熵正则最优传输 $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij}\pi_{ij}log\pi_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=a$$ $$\mathbf{\pi}^T\mathcal{1}=b$$
+其最优解唯一，形式为$\pi^\ast_{ij}=u_iK_{ij}v_j$，其中$K_{ij}=exp(c_{ij})\over\epsilon$，且最优传输矩阵
+$$\pi^\ast=Diag(u)KDiag(v)$$
+熵正则最优解形式推导 写出原问题的拉格朗日函数 $$L(\pi,u,v))\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}-u(\pi\mathbf{1}-a)-v(\pi^T\mathbf{1}-b)-\epsilon(\sum_{ij} \pi_{ij}-1)$$
+处于方便计算，上式体现传输矩阵有个正则化约束项，可改写熵正则的目标问题等价$\epsilon\sum\pi log\pi-1$，基于此，可以理解为什么拉格朗日惩罚系数时$\epsilon$；
+对Larg函数求最优点，注意$\pi_{ij}$求导，直接看线性结构的系数（向量分量）；
+$$\frac{\partial L}{\partial\pi_{ij}}=c_{ij}+\epsilon(log\pi_{ij}-1)-u_i-v_j-\epsilon=c_{ij}+\epsilon log\pi_{ij}-u_i-v_j=0$$
+$$log\pi^\ast_{ij}=\frac{-c_{ij}+u_i+v_j}{\epsilon}$$
+$$\pi^\ast_{ij}=exp(\frac{-c_{ij}+u_i+v_j}{\epsilon})=exp(\frac{u_i}{\epsilon})exp(-\frac{c_{ij}}{\epsilon})exp(\frac{v_j}{\epsilon})$$
+Scaling Algorithm
+我们要想求解最优传输矩阵$\pi$，通过上面正则解的推导，得到最优矩阵的元素$K_{ij}$与$u_i,v_j,c_{ij},\epsilon$有关；因此，如果恢复矩阵$\pi$，我们关键需要求解向量$u$和$v$，即产生以下约束问题： $$u= [exp(\frac{u_i}{\epsilon})]$$ $$v= [exp(\frac{v_j}{\epsilon})]$$ $$s.t.\ Diag(u)KDiag(v)\mathcal{1}=a $$ $$Diag(v)K^TDiag(u)\mathcal{1}=b $$
+理解上述式子需要注意：
+$K$矩阵元素与代价矩阵元素有关； 对角阵左乘一个矩阵，等价于矩阵的每行乘对角阵对应元素； 对角阵右乘一个矩阵，等价于矩阵的每列乘对角阵对应元素； $Diag(u)KDiag(v)=\pi$，对于传输矩阵$\pi$的元素$\pi_{ij}=u(i)K_{ij}v(j)$，即$\pi_{ij}$由三部分构成，可以考虑计算结合过程为$K_{ij}$的$i$对应着$u(i)$，$K_{ij}$的$j$对应着$v(j)$； 第四个式子可以看成第三个式子的转置，结合传输矩阵转置与单位列向量乘即对逐列求和可得； 结合以上，我们知道等价于解关于$u$和$v$的方程组： $$Diag(u)Kv=a$$ $$Diag(v)K^Tu=b$$
+对此，交替迭代的Sinkhorn算法如下：
+初始化$v^0=(1,1,,1)^T$； 基于第一个方程更新$u^1$； 基于第二个方程更新$v^1$； 在$l+1$轮，用$v^l$更新$u^l$，根据$u^{l+1}$来更新$v^{l+1}$，得到$(v^{l+1},u^{l+1})$，从而得到相应的$\pi$阵；
+算法的几何解释：
+在两个空间交替投影（找到适合问题的解），一个空间是行和为$a$的矩阵空间，一个空间为行和为$b$的矩阵，算法最终收敛在两个空间相交的地方，即表示行和为$a$且列和为$b$的传输矩阵； 算法理论基础：
+两个闭凸集$C$和$D$，假设在这两个闭凸集上的投影算子$P_C$和$P(D)$，当进行迭代交替的投影时，最终两个投影输出会落在$C\cap D$上； 更多解释可参考Note； </description>
+    </item>
+    
+    <item>
+      <title>Lecture 12 Entropy and Second Law</title>
+      <link>https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/</link>
+      <pubDate>Wed, 31 Aug 2022 10:20:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/</guid>
+      <description>Entropy Regularized Optimal Transport 香农熵：一个分布的香农熵在有限空间$\sum_{i=1}^k p_i=1$为 $$-\sum_i p_ilogp_i$$
+分布越均匀，熵越大，均匀分布的熵最大，分布越偏，熵越小； 对于两个分布的耦合$\pi$，其最优传输问题为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=r$$
+对应的熵正则最优传输为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=r$$
+原始的离散最优传输问题是一个线性规划问题，其最优解在约束凸集的顶点处取得； 分析带有熵正则的最优传输，对于一个耦合，为什么顶点处的熵是零； 如何分析熵正则的最优传输将最优点从边界顶点处推向约束凸集的内部； </description>
+    </item>
+    
+    <item>
+      <title>Optimal Transport</title>
+      <link>https://optstats.github.io/2022/08/optimal-transport/</link>
+      <pubDate>Wed, 31 Aug 2022 08:40:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/optimal-transport/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://optstats.github.io/2022/08/about/</link>
@@ -90,6 +137,84 @@ m个凸函数的前k大凸函数的和构成的函数是凸函数；</descriptio
 两个凸集的交 两个凸集元素的加减构成的集合 一个线性的绝对值不等式可以看成两个半空间的交 放射变换：有偏差的线性变换$f(x)=Ax+b$ 凸集上的放射变换得到集合是凸集 凸集上的逆放射变换得到的集合（原像）是凸集 放缩：想象二维的放缩，如锥束一样； 平移：凸集的移动，不改变凸性； 投影：有种降维操作的感觉，想象三维空间的球凸集，投影到二维平面的圆； 凸集基本性质 投影定理：在非空闭凸集上存在唯一的一点到该集合外的任一点距离最小；
 存在且唯一
 连续函数在有界区域上求最值，存在 投影点的充要条件：$(x-x^\ast)^T(y-x^\ast)\leq 0, \forall x\in C$</description>
+    </item>
+    
+    <item>
+      <title>Fundamentals of Topology</title>
+      <link>https://optstats.github.io/2022/08/fundamentals-of-topology/</link>
+      <pubDate>Sun, 21 Aug 2022 10:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/fundamentals-of-topology/</guid>
+      <description>拓扑基础 拓扑空间：一个集合$X$构成一个拓扑空间，当它的子集族是开的且符合以下原子性质,
+开集的无限并是开集 开集的有限交是开集 $X$和$\phi$是空集 对于一个开区间，两个端点，我们可以总是取距端点任意小距离的点，但总是不能取端点，开区间是开集；
+闭集
+开集的补是闭集，闭集的补是开集； 所有$X$的子集非开即闭？NO!&amp;hellip;$[0,2\pi)$非开非闭，考虑$(-\infty,0)\cup[2\pi,+\infty)$，前者是开的，后者是闭的； 对任意拓扑空间，$X$和$\phi$既是开也是闭的； $n-ball(x)$是开的，$n-ball$的定义是开界（强不等关系）的，所以开区间是开集的一种直观理解；
+假定$X$是一个拓扑空间，$U$是$X$的子集，一些特殊的点：
+$x\in U$，如果存在一个$n-ball(x)$，或者说，如果存在一个开集$\mathbf{O_1}$，$x\in \mathbf{O_1}$，$\mathbf{O_1}\subseteq U$，那么$x$称为$U$的内点；（可以体会$n-ball(x)$是开集的一种表示，如4.） 如果存在一个开集$\mathbf{O_2}$(也可说成关于$x$的开球)且$x\in\mathbf{O_2}$，如果$\mathbf{O_2}\subseteq X-U$，那么$x$为$U$的外点； 如果$x$既不是外点也不是内点，那么$x$是边界点，$U$所有边界点构成$U$的边界； 聚点：如果$x$是内点或是边界点，那么$x$是聚点； 所有聚点的集合称为集合$U$的闭包，是一个闭集，所以闭包是内点集合并上边界点集合； 例如，$X=R$时，边界点就是区间端点，注意集合$U$未必包含边界点，如$(0,1)$和$[0,1)$的边界点都是0和1；$(0,1)$内的所有点是内点；$[0,1]$内所有的点是聚点； 聚点名字limit-point由来：因为端点是一个序列的limit（级数）取到； 关于$R^n$的拓扑
+对于任意的$n$，都可以构成一个拓扑空间； 基于开球的定义来刻画拓扑空间； 开球是开集的一种标准表示； 任意一个开集可以由开球的有限并得到，对于一维情况，一个开集可以由可数个开区间并得到； 子空间拓扑：通过开集和子集来构造； 平凡拓扑：$X$和$\phi$ 任意集合的拓扑（拓扑空间定义是很General的）：定义好基础的开集，就可以构造一系列开集，从而构成一个拓扑空间； Hausdorff原子性质：任意两个开集不相交，满足这个原子性质的拓扑空间构成Hausdorff空间； 拓扑空间上的的连续函数，令$f: X\rightarrow Y$是两个拓扑空间上的映射，对于任一集合$B\subseteq Y$,定义$B$的原像为 $$f^{-1}(B)=\lbrace x\in X|f(x)\in B\rbrace$$
+对于分析连续函数繁冗的连续定义，拓扑的定义相对简洁； 函数通过用原像来表示，不要求函数是可逆的； 函数是连续的，当原像的映射$f^{-1}(B)$是一个开集； 同胚
+两个拓扑空间如果存在一个双射，那么这两个空间是同胚的，同胚即一种等价关系（三种性质）； 单射：一对一映射； 满射：所有的y都是x对应； 双射：单射且满射（严格）； 非奇异线性变换？ 区间同胚：关于R的开区间是同胚的； 图的同构和拓扑同胚不总是一致成立； 流形
+一个拓扑空间是一个流形，仅当：（1）空间中的每个元素都属于一个开集；（2）这个开集同胚与一个n维空间；（3）n称为流形的维度； 拓扑空间的构建：笛卡尔积，开集与开集的结合构成新的拓扑空间，因此流形的构建也可以来自笛卡尔积； 流形同胚时的几何图示？ Ref: UIUC planning algorithm </description>
+    </item>
+    
+    <item>
+      <title>线性规划-2</title>
+      <link>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-2/</link>
+      <pubDate>Sat, 20 Aug 2022 07:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-2/</guid>
+      <description>线性规划的解 可行解：满足约束条件和变量非负要求的解 ；
+可行域（集）：全体可行解构成的区域（集合）；
+最优解：使目标函数取得最值的可行解；
+基：线性约束方程组的系数矩阵$A\in R^{m*n},m\leq n$的秩为m，则$A$的满秩子阵$B\in R^{m*m}$为一个基；
+基变量 非基变量 基向量 基解：通过一确定的基，令非基变量为0，由约束方程组解出来的基变量，称为基解； 基可行解：满足变量非负条件的基解，基解不一定是基可行解； 可行基：对应于基可行解的基； 图解法 适用二维的线性规划问题，但几何直观
+步骤：
+画出可行域 线性规划若存在可行域，则是个凸集 画出目标函数 确定最优解：如果最优解存在，则一定在可行域的顶点取到 唯一最优解 无穷多最优解：目标函数平行于可行域的边界 无可行解：可行域和目标最值方向不一致 无界解：可行域是无界的 单纯性法 凸集的顶点：不能用凸组合表示的点 </description>
+    </item>
+    
+    <item>
+      <title>线性规划-1</title>
+      <link>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-1/</link>
+      <pubDate>Sat, 20 Aug 2022 05:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92-1/</guid>
+      <description>规划问题的数学模型三要素 决策变量 目标函数 约束条件 线性规划 1. 定义 目标函数式决策变量的线性函数 约束条件是决策变量的线性不等式或线性等式 2. 标准型 $max\ c^Tx$
+$s.t.\ Ax=b$
+$x\geq 0$
+极大化目标 全部约束为等式约束，且右端为非负 决策变量非负 3. 转换成标准型的操作 不等约束的转换： 加松弛变量 减剩余变量 松弛变量和剩余变量在目标函数中的系数为0 乘负号操作 min2max 变量为负 b为负 无约束变量的双替换 </description>
+    </item>
+    
+    <item>
+      <title>Lecture 2 Convex Set</title>
+      <link>https://optstats.github.io/2022/08/lecture-2-convex-set/</link>
+      <pubDate>Thu, 18 Aug 2022 11:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-2-convex-set/</guid>
+      <description>凸集 仿射集：集合内任意两不同点构成的直线集 直线：$x=\theta x_1+(1-\theta)x_2,\ \theta\in R$
+从方向向量角度理解直线的形成：如上式，$x_2$作为一点，$x_1-x_2$构成一个方向向量
+$OC=\alpha OB+(1-\lambda)OA$的推导：点$\mathcal{C}$在线段AB内，点$\mathcal{O}$为直线AB外一点
+$\mathcal{AC=OC-OA}$ $\mathcal{AB=OB-OA}$ $\mathcal{AC=\lambda AB}\Rightarrow \mathcal{OC-OA}=\lambda(\mathcal{OB-OA})$ $\mathcal{OC}=\lambda \mathcal{OB}+(1-\lambda)\mathcal{OA}$ $\mathcal{OC}$等向量可以看成C的向量坐标 二维平面上的直线是一维的，但是直线方程是二维的（从$x_i$的下标看），所以n维空间的直线是$n-1$维的，但方程是到$x_n$的；
+仿射集可以表示成一个线性方程组的解（从定义出发思考）
+凸集 线段：凸集的定义就是两点之间的点仍在该集合内，$x=\theta x_1+(1-\theta)x_2,\ \theta \in [0,1]$； 凸组合：全部系数和为1且非负； 凸包：凸集内点构成的全部凸组合集合； 锥：$x=\theta x_0, \theta\geq 0$； 锥组合：每个点系数非负构成的组合； 凸锥：系数和为1； 超平面：仿射且凸，$\lbrace x|a^Tx=b\rbrace(a\neq0)$，向量$a$定义平面的法向（也可以看做平面的方向） 半空间：$\lbrace x|a^Tx\leq b\rbrace(a\neq0)$ 欧几里得球：$B(x_c,r)=\lbrace x|\ ||x-x_c||_2\leq r\rbrace$ 椭球：$\lbrace x|(x-x_0)^TP^{-1}(x-x_0)\leq 1\rbrace$，$P\in S_{++}^n$，即对称正定 范数球：可以看成欧球的推广，$NB(x_c,r)=\lbrace x|\ ||x-x_c||\leq r\rbrace$ 范数锥：$\lbrace(x,t)|\ ||x||\leq t\rbrace$，欧几里得范数锥也称二阶锥 多面体：有限个线性不等式（半空间）和等式（超平面）构成的集合 半正定锥$\mathbf{S}^n_+$：关于矩阵对象的凸性研究 $\mathbf{S}^n$表示一个对称的$n*n$矩阵 半正定的$n*n$矩阵为一个凸锥：$\mathbf{S}^n_+=\lbrace X\in \mathbf{S}^n|X\geq 0\rbrace$ 正定：$\mathbf{S}^n_{++}=\lbrace X\in \mathbf{S}^n|X&amp;gt;0\rbrace$ 保凸运算
+如何构建一个凸集：从常见凸集结合保凸运算构造； 任意凸集的交 基于凸集的前提下，其仿射函数的像或原像都是凸的； 线性矩阵不等式 放缩变换、投影 双曲锥 透视函数：$P: R^{n+1}\rightarrow R^n$ $P(x,t)=x/t \ \ dom(P)=\lbrace(x,t)|t&amp;gt;0\rbrace$ 线性分数函数：$f:R^n\rightarrow R^m$ $f(x)=\frac{Ax+b}{c^Tx+d}\ \ dom(f)=\lbrace x|c^Tx+d&amp;gt;0\rbrace$ 凸集的透视函数和线性分数函数的像或原像都是凸的； 适当锥(广义不等性) 非负多项式 每个元素非负的向量集合$\mathbf{R}^n_+$ 最小值和极小值 分离超平面定理：两个非空的不相交凸集，存在超平面可以分开两个凸集；注意更严格划分的要求</description>
+    </item>
+    
+    <item>
+      <title>Lecture 1 Introduction</title>
+      <link>https://optstats.github.io/2022/08/lecture-1-introduction/</link>
+      <pubDate>Thu, 18 Aug 2022 08:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/lecture-1-introduction/</guid>
+      <description>1. 数学优化问题的定义和组成 2. 数学优化问题的求解 一般的优化问题不容易求解：计算时间长，不能总是找到解等因素； 有一些问题容易求解： 最小二乘 线性规划 凸优化 3. 最小二乘问题 $min ||Ax-b||_2^2$ 有解析解； 可靠有效的算法； 时间复杂度与$A^{m*n}$相关，为$n^2m$； 容易识别最小二乘问题，可以有一些调整，如正则、权重等； 4. 线性规划 $$min\ c^Tx$$
+$$s.t.\ a^Tx\leq b$$
+无解析解； 有成熟的算法； 时间复杂度正比于$n^2m(m&amp;gt;n)$ 可以将一些问题转化为线性规划，如$l_1$范数，$l_\infty$范数，分段线性函数问题等； 5. 凸优化问题 定义：目标和约束函数都是凸的；
+$f(\alpha x+\beta y)\leq \alpha f(x)+\beta f(y)$
+$\alpha + \beta =1, \alpha\geq 0,\beta\geq 0$
+计算时间$max{n^3,n^2m,F}$，$F$是估计函数$f_i$及其一二阶梯度的代价；
+很难识别一个问题是凸优化问题；
+很多问题可以转化为凸优化问题，利用成熟的技术求解；
+6. 非线性优化 局部最优问题
+需要初始值设定 计算快，可拓展到大规模问题 与全局最优无直接关联 全局最优问题：一般利用凸优化解决，但最坏情况可能是指数时间；</description>
     </item>
     
     <item>

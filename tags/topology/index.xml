@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topology on optstats</title>
+    <link>https://optstats.github.io/tags/topology/</link>
+    <description>Recent content in Topology on optstats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 21 Aug 2022 10:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/topology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fundamentals of Topology</title>
+      <link>https://optstats.github.io/2022/08/fundamentals-of-topology/</link>
+      <pubDate>Sun, 21 Aug 2022 10:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/08/fundamentals-of-topology/</guid>
+      <description>拓扑基础 拓扑空间：一个集合$X$构成一个拓扑空间，当它的子集族是开的且符合以下原子性质,
+开集的无限并是开集 开集的有限交是开集 $X$和$\phi$是空集 对于一个开区间，两个端点，我们可以总是取距端点任意小距离的点，但总是不能取端点，开区间是开集；
+闭集
+开集的补是闭集，闭集的补是开集； 所有$X$的子集非开即闭？NO!&amp;hellip;$[0,2\pi)$非开非闭，考虑$(-\infty,0)\cup[2\pi,+\infty)$，前者是开的，后者是闭的； 对任意拓扑空间，$X$和$\phi$既是开也是闭的； $n-ball(x)$是开的，$n-ball$的定义是开界（强不等关系）的，所以开区间是开集的一种直观理解；
+假定$X$是一个拓扑空间，$U$是$X$的子集，一些特殊的点：
+$x\in U$，如果存在一个$n-ball(x)$，或者说，如果存在一个开集$\mathbf{O_1}$，$x\in \mathbf{O_1}$，$\mathbf{O_1}\subseteq U$，那么$x$称为$U$的内点；（可以体会$n-ball(x)$是开集的一种表示，如4.） 如果存在一个开集$\mathbf{O_2}$(也可说成关于$x$的开球)且$x\in\mathbf{O_2}$，如果$\mathbf{O_2}\subseteq X-U$，那么$x$为$U$的外点； 如果$x$既不是外点也不是内点，那么$x$是边界点，$U$所有边界点构成$U$的边界； 聚点：如果$x$是内点或是边界点，那么$x$是聚点； 所有聚点的集合称为集合$U$的闭包，是一个闭集，所以闭包是内点集合并上边界点集合； 例如，$X=R$时，边界点就是区间端点，注意集合$U$未必包含边界点，如$(0,1)$和$[0,1)$的边界点都是0和1；$(0,1)$内的所有点是内点；$[0,1]$内所有的点是聚点； 聚点名字limit-point由来：因为端点是一个序列的limit（级数）取到； 关于$R^n$的拓扑
+对于任意的$n$，都可以构成一个拓扑空间； 基于开球的定义来刻画拓扑空间； 开球是开集的一种标准表示； 任意一个开集可以由开球的有限并得到，对于一维情况，一个开集可以由可数个开区间并得到； 子空间拓扑：通过开集和子集来构造； 平凡拓扑：$X$和$\phi$ 任意集合的拓扑（拓扑空间定义是很General的）：定义好基础的开集，就可以构造一系列开集，从而构成一个拓扑空间； Hausdorff原子性质：任意两个开集不相交，满足这个原子性质的拓扑空间构成Hausdorff空间； 拓扑空间上的的连续函数，令$f: X\rightarrow Y$是两个拓扑空间上的映射，对于任一集合$B\subseteq Y$,定义$B$的原像为 $$f^{-1}(B)=\lbrace x\in X|f(x)\in B\rbrace$$
+对于分析连续函数繁冗的连续定义，拓扑的定义相对简洁； 函数通过用原像来表示，不要求函数是可逆的； 函数是连续的，当原像的映射$f^{-1}(B)$是一个开集； 同胚
+两个拓扑空间如果存在一个双射，那么这两个空间是同胚的，同胚即一种等价关系（三种性质）； 单射：一对一映射； 满射：所有的y都是x对应； 双射：单射且满射（严格）； 非奇异线性变换？ 区间同胚：关于R的开区间是同胚的； 图的同构和拓扑同胚不总是一致成立； 流形
+一个拓扑空间是一个流形，仅当：（1）空间中的每个元素都属于一个开集；（2）这个开集同胚与一个n维空间；（3）n称为流形的维度； 拓扑空间的构建：笛卡尔积，开集与开集的结合构成新的拓扑空间，因此流形的构建也可以来自笛卡尔积； 流形同胚时的几何图示？ Ref: UIUC planning algorithm </description>
+    </item>
+    
+  </channel>
+</rss>
