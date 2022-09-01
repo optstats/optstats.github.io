@@ -26,9 +26,6 @@
     <loc>https://optstats.github.io/2022/08/optimal-transport/</loc>
     <lastmod>2022-08-31T08:40:58+05:30</lastmod>
   </url><url>
-    <loc>https://optstats.github.io/2022/08/about/</loc>
-    <lastmod>2022-08-30T21:37:58+05:30</lastmod>
-  </url><url>
     <loc>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
@@ -88,5 +85,7 @@
   </url><url>
     <loc>https://optstats.github.io/2022/08/probability-space/</loc>
     <lastmod>2022-08-16T02:01:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/about/</loc>
   </url>
 </urlset>

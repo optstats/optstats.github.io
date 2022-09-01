@@ -56,15 +56,6 @@ $K$矩阵元素与代价矩阵元素有关； 对角阵左乘一个矩阵，等�
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://optstats.github.io/2022/08/about/</link>
-      <pubDate>Tue, 30 Aug 2022 21:37:58 +0530</pubDate>
-      
-      <guid>https://optstats.github.io/2022/08/about/</guid>
-      <description>This is some static page where you can write about yourself.</description>
-    </item>
-    
-    <item>
       <title>Lecture 14 Wasserstein Space</title>
       <link>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</link>
       <pubDate>Tue, 30 Aug 2022 02:01:58 +0530</pubDate>
@@ -226,6 +217,15 @@ $\alpha + \beta =1, \alpha\geq 0,\beta\geq 0$
       <description>概率空间/三元组（$\Omega$,$\mathcal{F}$,$\mathcal{P}$） 样本空间：一个非空的任意集合$\Omega\neq \emptyset$，一个实验的所有可能的输出构成的集合； 事件空间：$\sigma$代数，事件是样本空间中一些样本的集合； 概率测度：将事件空间中的事件映射到$[0,1]$； $\sigma$代数 令$\Omega\neq \emptyset$，$\mathbf{P}(\Omega)$是其幂集，如果$\mathcal{F}\subseteq\mathbf{P}(\Omega)$且满足以下性质：
 $\mathcal{F}$包含$\Omega$，即$\Omega \in \mathcal{F}$； $\mathcal{F}$在补运算下是封闭的，即如果$A\in \mathcal{F}$，则$A^c:=\lbrace\Omega\backslash A\rbrace\in \mathcal{F}$； $\mathcal{F}$在可数个并操作下是封闭的，即$A_i\in \mathcal{F}, i=1,2,&amp;hellip;,$则$\bigcup_{i=1}^{\infty}A_i\in \mathcal{F}$； 推论 如果$\mathcal{F}$是一个$\sigma$代数，则其对可数个交操作是封闭的； 假定$\Omega\neq\emptyset$，常见的平凡$\sigma$代数有 $\mathcal{F}=\lbrace\Omega,\emptyset\rbrace$； $\mathcal{F}=\mathbf{P}(\Omega)$； $A\subseteq\Omega$，则$F=\lbrace A,A^c,\emptyset,\Omega\rbrace$是一个$\sigma$代数； $\sigma$代数的生成： 至多可数集合$\Omega$上，可通过可数个集合的划分生成 唯一最小$\sigma$代数 $Borel-\sigma$代数 关于$\Omega$开集的$\sigma$代数，不是由$\Omega$的划分生成；
 概率测度 $\Omega\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数：一些集合的并，概率空间中表现为事件； 函数$P:\mathcal{F}\rightarrow[0,1]$是一个概率测度当其满足： $P(\Omega)=1$ $P$符合$\sigma$可加性（两两不相交的并）：$P(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} p(A_i)$ 测度 $X\neq\emptyset$ $\mathcal{F}\subseteq\mathcal{P}(\Omega)$为一个$\sigma$代数 函数$\mu:\mathcal{F}\rightarrow[0,\infty]$是一个测度当其满足： $\mu(\empty)=0$ $\mu$符合$\sigma$可加性（两两不相交的并，也称可列(数)可加性）$\lbrace A_i\rbrace_{i=1}^{\infty}\subseteq\mathcal{F}$： $$\mu(\bigcup^{\infty}_{i=1}A_i)=\sum_i^{\infty} u(A_i)$$ 支撑 定义 一个随机变量$X$的支撑$S_X\in B$是最小的闭集，该闭集上的概率$P(S_X)$为1； 拓扑空间上的开球$B(x,r)$，在开球上$P(B(x,r))\geq 0$； 离散型随机变量的支撑：$\lbrace x\in dom(X)|p(X=x)\geq 0\rbrace$； 理解 测度是对集合“长度”的一种度量，将其映射到一个实值 $\sigma$代数是一个集合的集合，在概率空间上，其表现为事件集合 拉普拉斯概率：有限样本集合上的古典概型 狄拉克测度 随机变量：是一个样本空间到实数上映射 </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://optstats.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://optstats.github.io/about/</guid>
+      <description>Aka in USTC.</description>
     </item>
     
   </channel>
