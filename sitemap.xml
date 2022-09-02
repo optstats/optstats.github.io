@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</loc>
-    <lastmod>2022-08-31T12:29:58+05:30</lastmod>
+    <loc>https://optstats.github.io/2022/09/lecture-16-gradient-flow/</loc>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/math-612/</loc>
-    <lastmod>2022-08-31T12:29:58+05:30</lastmod>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/optimal-transport/</loc>
-    <lastmod>2022-08-31T12:29:58+05:30</lastmod>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/</loc>
-    <lastmod>2022-08-31T12:29:58+05:30</lastmod>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/posts/</loc>
-    <lastmod>2022-08-31T12:29:58+05:30</lastmod>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/</loc>
+    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/lecture-15-wasserstein-curves/</loc>
+    <lastmod>2022-09-01T02:01:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/08/lecture-13-scaling-algorithm-for-entropic-ot/</loc>
     <lastmod>2022-08-31T12:29:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/</loc>

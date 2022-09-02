@@ -2,20 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 12 Entropy and Second Law - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta itemprop="name" content="Lecture 12 Entropy and Second Law">
-<meta itemprop="description" content="Math 612 Single Cell Analysis"><meta itemprop="datePublished" content="2022-08-31T10:20:58+05:30" />
-<meta itemprop="dateModified" content="2022-08-31T10:20:58+05:30" />
-<meta itemprop="wordCount" content="26">
-<meta itemprop="keywords" content="Math 612,Optimal Transport," /><meta property="og:title" content="Lecture 12 Entropy and Second Law" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 15 Wasserstein Curves - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Lecture 15 Wasserstein Curves">
+<meta itemprop="description" content="Math 612 Single Cell Analysis"><meta itemprop="datePublished" content="2022-09-01T02:01:58+05:30" />
+<meta itemprop="dateModified" content="2022-09-01T02:01:58+05:30" />
+<meta itemprop="wordCount" content="54">
+<meta itemprop="keywords" content="Math 612,Optimal Transport," /><meta property="og:title" content="Lecture 15 Wasserstein Curves" />
 <meta property="og:description" content="Math 612 Single Cell Analysis" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://optstats.github.io/2022/08/lecture-12-entropy-and-second-law/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-08-31T10:20:58+05:30" />
-<meta property="article:modified_time" content="2022-08-31T10:20:58+05:30" />
+<meta property="og:url" content="https://optstats.github.io/2022/09/lecture-15-wasserstein-curves/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-01T02:01:58+05:30" />
+<meta property="article:modified_time" content="2022-09-01T02:01:58+05:30" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lecture 12 Entropy and Second Law"/>
+<meta name="twitter:title" content="Lecture 15 Wasserstein Curves"/>
 <meta name="twitter:description" content="Math 612 Single Cell Analysis"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/main.css" />
@@ -106,13 +106,13 @@
 				
 					<div class="meta">
 						<div class="date">
-							<span class="day">31</span>
-							<span class="rest">Aug 2022</span>
+							<span class="day">01</span>
+							<span class="rest">Sep 2022</span>
 						</div>
 					</div>
 				
 				<div class="matter">
-					<h1 class="title">Lecture 12 Entropy and Second Law</h1>
+					<h1 class="title">Lecture 15 Wasserstein Curves</h1>
 				</div>
 			</div>
 
@@ -120,28 +120,53 @@
 			
 					
 			<div class="markdown">
-				<h2 id="entropy-regularized-optimal-transport">Entropy Regularized Optimal Transport</h2>
+				<ol>
+<li>对于W-空间两个分布$u_0$和$u_1$的两个csg，$u_s$和$u_t$：</li>
+</ol>
+<p>$$W_p(u_s,u_t)\leq |t-s|W_p(u_0,u_1)$$</p>
+<h4 id="curves-in-w_p">Curves in $W_p$</h4>
 <ol>
-<li>
-<p>香农熵：一个分布的香农熵在有限空间$\sum_{i=1}^k p_i=1$为
-$$-\sum_i p_ilogp_i$$</p>
+<li>考虑$u_t,t\in (0,1)$是$W_p(X)$空间的一个连续曲线，其中$p&gt;1$，$X$是凸的支撑集，则存在一个向量场$v_t$，曲线沿着向量场流动生成</li>
+</ol>
+<p>$$\partial_t u_t+\nabla(v_tu_t)=0$$</p>
+<ol start="2">
+<li>关于csg的思考
 <ul>
-<li>分布越均匀，熵越大，均匀分布的熵最大，分布越偏，熵越小；</li>
-</ul>
-<p>对于两个分布的耦合$\pi$，其最优传输问题为：
-$$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}$$
-$$s.t.\ \mathbf{\pi}\mathcal{1}=r$$
-$$\mathbf{\pi}^T\mathcal{1}=c$$</p>
-<p>对应的熵正则最优传输为：
-$$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}$$
-$$s.t.\ \mathbf{\pi}\mathcal{1}=r$$
-$$\mathbf{\pi}^T\mathcal{1}=c$$</p>
-<ul>
-<li>原始的离散最优传输问题是一个线性规划问题，其最优解在约束凸集的顶点处取得；</li>
-<li>分析带有熵正则的最优传输，对于一个耦合，为什么顶点处的熵是零；</li>
-<li>如何分析熵正则的最优传输将最优点从边界顶点处推向约束凸集的内部；</li>
+<li>为什么说是考虑成对测度：因为csg是基于最优耦合去构造的，需要一对分布去得到csg；</li>
+<li>如果将csg看做一个连续曲线，则可以将其动态生成（有t）与向量场关联，每个$u_t$的梯度是下一个方向，也是最优下降方向即$u_t^{&rsquo;}=-\delta \nabla u_{t-1}$；</li>
+<li>曲线生成过程是一个用离散采样逼近连续的过程，将最优耦合看作一个状态转移映射$f$，</li>
 </ul>
 </li>
+</ol>
+<p>$$(u_t,u_{t-1})\sim \pi^*_{t,t-1}$$</p>
+<p>$$u_t\sim f(u_{t-1})$$</p>
+<p>$$min_f E_{\pi^*} ||u_t-f(u_{t-1})||^2$$</p>
+<ol start="3">
+<li>
+<p>梯度和梯度流基础</p>
+<ul>
+<li>离散的时间$k\in Z_0\lbrace0,1,2,,,\rbrace$，连续时间$t\in R_0=[0,\infty)$，离散时间可以看作是连续时间的一个离散化，基于一个无穷小的步，$t=\delta k,\ \delta&gt;0$；</li>
+<li>一个空间上的动力学是一个随着时间变化的状态曲线；</li>
+<li>状态曲线是如何随着时间生成或者变化的？
+<ul>
+<li>状态曲线是连续时间场景的梯度流生成，但我们用离散时间的梯度下降算法去近似连续时间的梯度流微分方程的光滑解；</li>
+<li>状态转移方向：向量场方向，$dX_{t}=F(X_t)=-\nabla X_t$，其中$F$是向量场，表示下一刻向哪里运动，也即向最速下降方向；</li>
+<li>连续两个离散时间点的转移关系：注意连续时间没有下一刻的概念，这里用一种线性近似去拟合,因此有$X_{t+\delta}=X_t+\delta F(X_t)$；</li>
+<li>如果从$t=0$开始，则生成一个$X_t(X_{\delta t})$序列且满足$X_{t+1}=X_t+\delta F(X_t)$，注意梯度下降的步长和时间变化步长作用类似，所以用相同 $\delta$ 表示；</li>
+<li>梯度流到底在做什么数学问题：连续时间的凸优化问题的求解，按照最速下降的方向去优化目标；</li>
+<li>梯度流和梯度下降可以看出：在离散和连续两个赛道的优化，可以并发处理且关联上，且保持相同的分析结果，如收敛分析，但离散情形要做一些假定，如函数是$L$-平滑等；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>负梯度方向对应的优化问题形式
+$$-\nabla f(x)=argmin_{v\in R^d}\lbrace&lt;\nabla f(x),v&gt;+\frac{1}{2}||v||^2\rbrace$$</p>
+</li>
+</ol>
+<h4 id="reference">Reference</h4>
+<ol>
+<li><a href="http://awibisono.github.io/2016/06/13/gradient-flow-gradient-descent.html">Gradient flow and gradient descent</a></li>
 </ol>
 
 			</div>

@@ -30,6 +30,12 @@
 	<div class="container wrapper">
 		<div class="header">
 	
+		<div class="avatar">
+			<a href="https://optstats.github.io/">
+				<img src="/icon.jpeg" alt="optstats" />
+			</a>
+		</div>
+	
 	<h1 class="site-title"><a href="https://optstats.github.io/">optstats</a></h1>
 	<div class="site-description"><p>Notebooks</p><nav class="nav social">
 			<ul class="flat"><li><a href="https://github.com/optstats" title="Github"><i data-feather="github"></i></a></li></ul>
@@ -175,7 +181,7 @@ $$Diag(v)K^Tu=b$$</p>
 <hr>
 <p>对此，交替迭代的Sinkhorn算法如下：</p>
 <ul>
-<li>初始化$v^0=(1,1,,1)^T$；</li>
+<li>初始化$v^0=(1,1,1)^T$；</li>
 <li>基于第一个方程更新$u^1$；</li>
 <li>基于第二个方程更新$v^1$；</li>
 </ul>
@@ -186,7 +192,7 @@ $$Diag(v)K^Tu=b$$</p>
 </ul>
 <p>算法理论基础：</p>
 <ul>
-<li>两个闭凸集$C$和$D$，假设在这两个闭凸集上的投影算子$P_C$和$P(D)$，当进行迭代交替的投影时，最终两个投影输出会落在$C\cap D$上；</li>
+<li>两个闭凸集$C$和$D$，假设在这两个闭凸集上的投影算子$P_C$和$P_D$，当进行迭代交替的投影时，最终两个投影输出会落在$C\cap D$上；</li>
 <li>更多解释可参考Note；</li>
 </ul>
 

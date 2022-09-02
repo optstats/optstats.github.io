@@ -6,7 +6,7 @@
 	<meta itemprop="name" content="Lecture 14 Wasserstein Space">
 <meta itemprop="description" content="Math 612 Single Cell Analysis"><meta itemprop="datePublished" content="2022-08-30T02:01:58+05:30" />
 <meta itemprop="dateModified" content="2022-08-30T02:01:58+05:30" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="66">
 <meta itemprop="keywords" content="Math 612,Optimal Transport," /><meta property="og:title" content="Lecture 14 Wasserstein Space" />
 <meta property="og:description" content="Math 612 Single Cell Analysis" />
 <meta property="og:type" content="article" />
@@ -29,6 +29,12 @@
 <body>
 	<div class="container wrapper">
 		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://optstats.github.io/">
+				<img src="/icon.jpeg" alt="optstats" />
+			</a>
+		</div>
 	
 	<h1 class="site-title"><a href="https://optstats.github.io/">optstats</a></h1>
 	<div class="site-description"><p>Notebooks</p><nav class="nav social">
@@ -114,7 +120,95 @@
 			
 					
 			<div class="markdown">
-				
+				<ol>
+<li>
+<p>度量：是一个函数，定义为一个距离，满足以下，</p>
+<ul>
+<li>对称$d(x,y)=d(y,x)$；</li>
+<li>非负仅当$d(x,x)=0$；</li>
+<li>三角不等式</li>
+</ul>
+</li>
+<li>
+<p>Wasserstein 空间$(X,D)$：参考度量空间的概念，可以理解为在样本空间$X$上，定义度量D为Wasserstein距离；</p>
+</li>
+<li>
+<p>n维空间上的度量：$L$-$p$范数，如2-范数，无穷范数等，有的范数基于内积定义，内积的好处在于可以定义距离和角度等一系列测度；</p>
+</li>
+</ol>
+<h3 id="分布的距离">分布的距离</h3>
+<ol>
+<li>
+<p>Total variation distance：相同支撑维度，对应支撑测度差的绝对值和；</p>
+</li>
+<li>
+<p>Hellinger distance：2-范数的一半；</p>
+</li>
+<li>
+<p>上面两个距离无法区分下图分布之间距离，分析为什么；
+
+  <img src="/dist.jpeg" alt="Fig1">
+
+</p>
+</li>
+<li>
+<p>最优传输距离：通过最优传输来定义两个分布$a,b$的距离为$W_p(a,b)$，称为$p$-wasserstein距离，$p\geq1$，一般取$p=2$；</p>
+<ul>
+<li>最优传输研究两个测度之间的距离，这种问题的定义形式构成一个W-dis；</li>
+<li>W-dis是一个度量</li>
+<li>构造耦合的技巧值得参考，结合下图
+
+  <img src="/coupling.jpg" alt="Fig2">
+
+
+考虑三个分布$a,b,c$即$\sum a_i=\sum b_i=\sum c_i=1$，定义一个耦合$S=\pi^\ast diag{\frac{1}{\tilde{b}}}\gamma^\ast$，也就是要检查这个耦合的两个边缘测度是分布$a$和分布$c$；</li>
+</ul>
+</li>
+</ol>
+<h3 id="曲线">曲线</h3>
+<ol>
+<li>
+<p>找两个分布的中介曲线，如下图，如果直接是分布的凸组合，得到的更像一个混合模型；
+
+  <img src="/dist-curve.png" alt="Fig3">
+
+
+借用优化的观点来思考这个问题，如求二维空间两个点$x,y\in R^2$的中点$z=\frac{x+y}{2}$，优化模型为
+$$z=argmin_z ||z-x||^2+||z-y||^2$$
+通过梯度$dz$可以得到$z=\frac{x+y}{2}$；</p>
+</li>
+<li>
+<p>Barycenter：距离多个分布平均W-距离最小的分布；
+$$b^{\ast}=argmin_{b}\sum_{i=1}^n \theta_i W_p^p(b,a_i),\ \sum\theta_i=1$$
+可见所求的barycenter是在多个分布构成的凸集内；</p>
+</li>
+<li>
+<p>constant speed geodesic(csg)</p>
+<ul>
+<li>定义：给定两个分布$a_0$和$a_1$，其csg为一个分布族$\lbrace a_t\rbrace_{t\in(0,1)}$，且满足$$W_p(a_0,a_t)=tW_p(a_0,a_1)$$</li>
+<li>如何构造得到$a_t$：从$a_0$和$a_1$的最优耦合$\pi^\ast$推导；
+对于有限样本支撑空间$\mathcal{X}=\lbrace x_1,x_2,,,x_n\rbrace$，
+$$P_t:\ \mathcal{X}*\mathcal{X}\rightarrow \mathcal{X}$$
+$$(x,y)\rightarrow tx+(1-t)y$$
+定义$a_t=\mathbf{E}_{\pi^\ast} P_t(X,Y),\ X\sim a_0,\ Y\sim a_1$</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>$$a_t=\sum_{ij}^n\pi_{ij} P_t(X,Y), \ (X,Y)\sim \pi^{\ast}$$</p>
+<p>$$W_p(a_0,a_t)=tW_p(a_0,a_1)$$</p>
+<p>$$W_p(a_{t1},a_{t2})=(t_2-t_1)W_p(a_0,a_1)$$</p>
+<hr>
+<ol start="4">
+<li>对csg的构造分析
+<ul>
+<li>csg分布是基于两个边缘分布及其最优耦合构造得到；</li>
+<li>csg是指使$W_p$满足线性关系的分布族；</li>
+<li>$P_t$是产生两个分布的凸组合分布，这个分布位于两个端点分布之间；</li>
+</ul>
+</li>
+</ol>
+
 			</div>
 
 			<div class="tags">
