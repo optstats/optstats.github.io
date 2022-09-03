@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 01 Sep 2022 04:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Sep 2022 04:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 1 Introduction to Optimal Transport</title>
+      <link>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</link>
+      <pubDate>Fri, 02 Sep 2022 04:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</guid>
+      <description>Monge Problem 1. Background To transport a pile of sand into some holes, such as from point $x$ to $T(x)$; We concern which in an efficient way to transport formulated with cost $x-T(x)$; The over all transport formulated by $\int [x-T(x)]f(x)dx$; We could understand the formula above in this way, the $x-T(x)$ denotes the unit mass transport cost, the $f(x)$ denotes the mass on opint x, so the whole transport cost on point $x$ is $[x-T(x)]f(x)$.</description>
+    </item>
+    
     <item>
       <title>Lecture 16 Gradient Flow</title>
       <link>https://optstats.github.io/2022/09/lecture-16-gradient-flow/</link>
@@ -43,7 +52,7 @@ Reference Gradient flow and gradient descent </description>
 其最优解唯一，形式为$\pi^\ast_{ij}=u_iK_{ij}v_j$，其中$K_{ij}=exp(c_{ij})\over\epsilon$，且最优传输矩阵
 $$\pi^\ast=Diag(u)KDiag(v)$$
 熵正则最优解形式推导 写出原问题的拉格朗日函数 $$L(\pi,u,v))\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}-u(\pi\mathbf{1}-a)-v(\pi^T\mathbf{1}-b)-\epsilon(\sum_{ij} \pi_{ij}-1)$$
-处于方便计算，上式体现传输矩阵有个正则化约束项，可改写熵正则的目标问题等价$\epsilon\sum\pi log\pi-1$，基于此，可以理解为什么拉格朗日惩罚系数时$\epsilon$；
+处于方便计算，上式体现传输矩阵有个正则化约束项，可改写熵正则的目标问题等价$\epsilon\sum\pi log\pi-1$，基于此，可以理解为什么拉格朗日惩罚系数是$\epsilon$；
 对Larg函数求最优点，注意$\pi_{ij}$求导，直接看线性结构的系数（向量分量）；
 $$\frac{\partial L}{\partial\pi_{ij}}=c_{ij}+\epsilon(log\pi_{ij}-1)-u_i-v_j-\epsilon=c_{ij}+\epsilon log\pi_{ij}-u_i-v_j=0$$
 $$log\pi^\ast_{ij}=\frac{-c_{ij}+u_i+v_j}{\epsilon}$$
@@ -69,15 +78,6 @@ $K$矩阵元素与代价矩阵元素有关； 对角阵左乘一个矩阵，等�
 分布越均匀，熵越大，均匀分布的熵最大，分布越偏，熵越小； 对于两个分布的耦合$\pi$，其最优传输问题为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=c$$
 对应的熵正则最优传输为： $$min_{\pi}\sum_{ij} \pi_{ij}c_{ij}+\epsilon\sum_{ij} \pi_{ij}log \pi_{ij}$$ $$s.t.\ \mathbf{\pi}\mathcal{1}=r$$ $$\mathbf{\pi}^T\mathcal{1}=c$$
 原始的离散最优传输问题是一个线性规划问题，其最优解在约束凸集的顶点处取得； 分析带有熵正则的最优传输，对于一个耦合，为什么顶点处的熵是零； 如何分析熵正则的最优传输将最优点从边界顶点处推向约束凸集的内部； </description>
-    </item>
-    
-    <item>
-      <title>Optimal Transport</title>
-      <link>https://optstats.github.io/2022/08/optimal-transport/</link>
-      <pubDate>Wed, 31 Aug 2022 08:40:58 +0530</pubDate>
-      
-      <guid>https://optstats.github.io/2022/08/optimal-transport/</guid>
-      <description></description>
     </item>
     
     <item>
