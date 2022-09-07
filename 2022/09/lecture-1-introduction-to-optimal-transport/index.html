@@ -6,7 +6,7 @@
 	<meta itemprop="name" content="Lecture 1 Introduction to Optimal Transport">
 <meta itemprop="description" content="Optimal Transport Course from NJIT."><meta itemprop="datePublished" content="2022-09-02T04:56:58+05:30" />
 <meta itemprop="dateModified" content="2022-09-02T04:56:58+05:30" />
-<meta itemprop="wordCount" content="142">
+<meta itemprop="wordCount" content="754">
 <meta itemprop="keywords" content="B.Hamfeldt,Optimal Transport,MATH 707," /><meta property="og:title" content="Lecture 1 Introduction to Optimal Transport" />
 <meta property="og:description" content="Optimal Transport Course from NJIT." />
 <meta property="og:type" content="article" />
@@ -118,10 +118,31 @@
 
 			
 			
+			<aside class="toc">
+				<header>
+				<h2>Contents</h2>
+				</header>
+				<nav id="TableOfContents">
+  <ol>
+    <li><a href="#monge-problem">Monge Problem</a>
+      <ol>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#optimal-mapping">Optimal Mapping</a></li>
+      </ol>
+    </li>
+    <li><a href="#kantorovich-formulation">Kantorovich Formulation</a>
+      <ol>
+        <li><a href="#monotone-in-1d-case">monotone in 1D case</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+			</aside>
+			
 					
 			<div class="markdown">
-				<h3 id="monge-problem">Monge Problem</h3>
-<h4 id="1-background">1. Background</h4>
+				<h2 id="monge-problem">Monge Problem</h2>
+<h3 id="background">Background</h3>
 <ol>
 <li>To transport a pile of sand into some holes, such as from point $x$ to $T(x)$;</li>
 <li>We concern which in an efficient way to transport formulated with cost $x-T(x)$;</li>
@@ -144,7 +165,119 @@ $$min\ \int c(x,y)f(x)dx$$</p>
 <p>The transport is mass balance, i.e. $u(R^n)=v(R^n)$.</p>
 </li>
 </ol>
-<h4 id="2-optimal-mapping">2. Optimal Mapping</h4>
+<h3 id="optimal-mapping">Optimal Mapping</h3>
+<ol>
+<li>We seek a transport map $T(x)$ to map source to target, the source supported on $X$ and the target supported on $Y$, where we assume the $X$ and $Y$ are subset of $R^n$.</li>
+</ol>
+<p>$$T: X \rightarrow Y $$</p>
+<ol start="2">
+<li>We want to conserve mass not just globally but also locally. For any set $A$ in $Y$, which comes from the set $T^{-1}(A)$ in $X$ and as we need conserve the mass, therefore,</li>
+</ol>
+<p>$$u(T^{-1}(A))=v(A)\ \forall A\subseteq Y$$</p>
+<ol start="3">
+<li>
+<p>$u(T^{-1}(A))$ defines the operation pushforward of $u$ through $T$, denoted as $T_{\sharp}u$.</p>
+</li>
+<li>
+<p>As with mass conservation, the pushforward is  measure preservation, $T_{\sharp}u=v$. Also we could think the measure as the mass on set.</p>
+</li>
+<li>
+<p>The Monge formulation</p>
+</li>
+</ol>
+<p>$$min\ \lbrace\int_{R^n} c(x,T(x))du(x)|T_{\sharp}u=v\rbrace $$</p>
+<ol start="6">
+<li>
+<p>The some questions for Monge formulation:</p>
+<ul>
+<li>Is there a minimiser?</li>
+<li>Is it unique?</li>
+<li>Stability?</li>
+<li>Is it feasible?</li>
+<li>Can we compute the solution? If there is, how do we compute it.</li>
+</ul>
+</li>
+<li>
+<p>Book moving problem</p>
+<ul>
+<li>The problem is move two adjacent book to next location, noting the next assumption.</li>
+<li>Non-uniqueness: If the cost is $c(x,y)=|x-y|$, there are two mass-preserving plans, both have a cost of 2.</li>
+<li>Unique solution: If the cost is $c(x,y)=\frac{1}{2}|x-y|^2$, also the quadratic cost is much easier.</li>
+</ul>
+</li>
+<li>
+<p>Non-uniqueness: Considering there are four points, two dot points and two product points, there are two different rearrange plans and there are no difference on cost, even for quadratic cost.</p>
+</li>
+<li>
+<p>Feasibility: Considering there is one source point with mass 1 and two target points with the same needed mass $\frac{1}{2}$, where we could not find one map to do this work simultaneously under the mass preserving constraint.
+So we need to allow the mass to split.</p>
+</li>
+</ol>
+<h2 id="kantorovich-formulation">Kantorovich Formulation</h2>
+<ol>
+<li>
+<p>We seek a transport plan(not map) that allow mass to split, also meet the constraints of Monge problem.</p>
+</li>
+<li>
+<p>We need to konw how much mass moved from x to y, where we store this in a measure $\pi$ defined on $X\ast Y$.</p>
+</li>
+<li>
+<p>In general, if $A\subset X$ and $B\subset Y$, the $\pi(A,B)$ tells us how much mass transported from $A$ to $B$.</p>
+</li>
+<li>
+<p>We still need to conserve mass, choose some $x\in X$, we have $\pi(x,Y)=u(x)$.</p>
+</li>
+<li>
+<p>More generally, not just for the point $x$, we could do above for a set. Therefore, if $A\subset X$, then $\pi(A,Y)=u(A)$, where we say the $u$ is the marginal of $\pi$ on $X$. Also we need $v$  to be the marginal of $\pi$ on $Y$, if $B\subset Y$, then $\pi(X,B)=v(B)$.</p>
+</li>
+<li>
+<p>The transport map may not be found but we always could find a transport plan as long as one meet the mass balance, where the two marginal of $\pi$ are $u$ and $v$ respectively.</p>
+</li>
+</ol>
+<p>$$inf\lbrace \int_{X\ast Y} c(x,y)d\pi(x,y) | \pi\in\Pi(u,v))\rbrace$$</p>
+<ol start="7">
+<li>
+<p>The Kantorovich formulation is linear about constraint $\pi$ but the Monge formulation is non-linear for the constraint.</p>
+</li>
+<li>
+<p>Some special cases:</p>
+<ul>
+<li>Discrete OT: Dirac masses to Dirac Masses</li>
+<li>Continuous OT: $u$ and $v$ are absolutely continuous with densities $f,g$.</li>
+<li>Semi-discrete OT: $u$ is absolutely cts and $v$ consists of Diracs.</li>
+</ul>
+</li>
+</ol>
+<h3 id="monotone-in-1d-case">monotone in 1D case</h3>
+<ol start="9">
+<li>
+<p>Let&rsquo;s Find $T(x)$ in quadratic cost and $1$-$D$ to minimize:
+$$\frac{1}{2}\int_R (x-T(x))^2f(x)dx$$
+$$s.t. \int_{T^{-1}(A)}f(x)dx=\int_{A}g(y)dy$$</p>
+<p>Alternatively,</p>
+</li>
+</ol>
+<p>$$\int_X h(T(x))f(x)dx=\int_Yh(y)g(y)dy\ \forall h\in CTS(x)$$</p>
+<ol start="10">
+<li>When the transport is optimal in above setting, we could find the transport map $T$ is monotone.
+<ul>
+<li>Let&rsquo;s pick two points $x_1$ and $x_2$, $\epsilon \geq 0$ and make two little open interval $I_1$ and $I_2$.</li>
+<li>$\int_{I_1}f(x)dx=\epsilon=\int_{I_2}f(x)dx,\ x_1\in I_1,\ x_2\in I_2$;</li>
+<li>Let $y_i=T(x_i)$ and $J_i=T(I_i)$, where the $J$ is the interval containing $y$</li>
+<li>Let&rsquo;s set a new mass-preserving map $\tilde T$, where $\tilde T(x_1)=y_2$,$\tilde T(x_2)=y_1$, $\tilde T(I_1)=J_2$ and $\tilde T(I_2)=J_1$.</li>
+<li>$\tilde T(x)=T(x)$, if $x\notin I_1\cup I_2$</li>
+<li>As $T$ is optimal, we have</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>$$\frac{1}{2}\int_R (x-T(x))^2f(x)dx\leq \frac{1}{2}\int_R(x-\tilde T(x))f(x)dx$$</p>
+<p>$$-\int_{I_1} xT(x)f(x)dx-\int_{I_2}xT(x)f(x)dx\leq -\int_{I_1} x\tilde T(x)f(x)dx-\int_{I_2}x\tilde T(x)f(x)dx$$</p>
+<p>$$\frac{1}{\epsilon}\int_{I_1}x(\tilde T(x)-T(x))f(x)dx+\frac{1}{\epsilon}\int_{I_2}x(\tilde T(x)-T(x))f(x)dx\leq 0$$</p>
+<hr>
+<p>As $\epsilon\rightarrow 0$, we have
+$$x_1(y_2-y_1)+x_2(y_1-y_2)\leq 0$$</p>
+<p>$$(y_2-y_1)(x_2-x_1)\geq 0$$</p>
 
 			</div>
 

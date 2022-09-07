@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 02 Sep 2022 04:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/b.hamfeldt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Sep 2022 07:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/b.hamfeldt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 2 Cyclical Monotonicity and Kantorovich Problem</title>
+      <link>https://optstats.github.io/2022/09/lecture-2-cyclical-monotonicity-and-kantorovich-problem/</link>
+      <pubDate>Wed, 07 Sep 2022 07:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-2-cyclical-monotonicity-and-kantorovich-problem/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Lecture 1 Introduction to Optimal Transport</title>
       <link>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</link>
       <pubDate>Fri, 02 Sep 2022 04:56:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</guid>
-      <description>Monge Problem 1. Background To transport a pile of sand into some holes, such as from point $x$ to $T(x)$; We concern which in an efficient way to transport formulated with cost $x-T(x)$; The over all transport formulated by $\int [x-T(x)]f(x)dx$; We could understand the formula above in this way, the $x-T(x)$ denotes the unit mass transport cost, the $f(x)$ denotes the mass on opint x, so the whole transport cost on point $x$ is $[x-T(x)]f(x)$.</description>
+      <description>Monge Problem Background To transport a pile of sand into some holes, such as from point $x$ to $T(x)$; We concern which in an efficient way to transport formulated with cost $x-T(x)$; The over all transport formulated by $\int [x-T(x)]f(x)dx$; We could understand the formula above in this way, the $x-T(x)$ denotes the unit mass transport cost, the $f(x)$ denotes the mass on opint x, so the whole transport cost on point $x$ is $[x-T(x)]f(x)$.</description>
     </item>
     
   </channel>

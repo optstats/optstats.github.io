@@ -3,24 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://optstats.github.io/tags/b.hamfeldt/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
-    <loc>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <loc>https://optstats.github.io/2022/09/lecture-2-cyclical-monotonicity-and-kantorovich-problem/</loc>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/math-707/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/optimal-transport/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/posts/</loc>
-    <lastmod>2022-09-02T04:56:58+05:30</lastmod>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/</loc>
+    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/ot-cleaner-label-correction-as-optimal-transport/</loc>
+    <lastmod>2022-09-05T04:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/ot-cleaner/</loc>
+    <lastmod>2022-09-05T04:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/lecture-1-introduction-to-optimal-transport/</loc>
     <lastmod>2022-09-02T04:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/09/lecture-16-gradient-flow/</loc>

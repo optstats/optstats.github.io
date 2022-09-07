@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 02 Sep 2022 04:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Sep 2022 07:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>B.Hamfeldt</title>
       <link>https://optstats.github.io/tags/b.hamfeldt/</link>
-      <pubDate>Fri, 02 Sep 2022 04:56:58 +0530</pubDate>
+      <pubDate>Wed, 07 Sep 2022 07:56:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/b.hamfeldt/</guid>
       <description></description>
@@ -20,7 +20,7 @@
     <item>
       <title>MATH 707</title>
       <link>https://optstats.github.io/tags/math-707/</link>
-      <pubDate>Fri, 02 Sep 2022 04:56:58 +0530</pubDate>
+      <pubDate>Wed, 07 Sep 2022 07:56:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/math-707/</guid>
       <description></description>
@@ -29,9 +29,18 @@
     <item>
       <title>Optimal Transport</title>
       <link>https://optstats.github.io/tags/optimal-transport/</link>
-      <pubDate>Fri, 02 Sep 2022 04:56:58 +0530</pubDate>
+      <pubDate>Wed, 07 Sep 2022 07:56:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/optimal-transport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OT-Cleaner</title>
+      <link>https://optstats.github.io/tags/ot-cleaner/</link>
+      <pubDate>Mon, 05 Sep 2022 04:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/ot-cleaner/</guid>
       <description></description>
     </item>
     

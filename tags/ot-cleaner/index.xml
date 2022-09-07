@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OT-Cleaner on optstats</title>
+    <link>https://optstats.github.io/tags/ot-cleaner/</link>
+    <description>Recent content in OT-Cleaner on optstats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Mon, 05 Sep 2022 04:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/ot-cleaner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OT CLEANER: LABEL CORRECTION AS OPTIMAL TRANSPORT</title>
+      <link>https://optstats.github.io/2022/09/ot-cleaner-label-correction-as-optimal-transport/</link>
+      <pubDate>Mon, 05 Sep 2022 04:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/ot-cleaner-label-correction-as-optimal-transport/</guid>
+      <description>Abstract Noisy label affects the model generalization; Label correction as a method to handel it but fail to handel, heavy noise samples with many categories What is global label distribution? The work formulates the label correction to an optimal transport problem; Having the superiority on training efficiency and classification accuracy; </description>
+    </item>
+    
+  </channel>
+</rss>
