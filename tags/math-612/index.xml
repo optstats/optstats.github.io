@@ -7,7 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Thu, 01 Sep 2022 04:01:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/math-612/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Sep 2022 03:11:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/math-612/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 5 Empirical distributions and dimensionality reduction</title>
+      <link>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</link>
+      <pubDate>Tue, 20 Sep 2022 03:11:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</guid>
+      <description> 测度：是一个实值函数，映射一个集合到一个实数值，且满足三条性质
+非负：$u(A)\geq 0,\forall A\in X$ 可加性：$u(A\cup B)=u(A)+u(B),\forall A,B\in X$ $u(\emptyset)=0$ 概率测度：在整个空间上，测度的值为1；
+Dirac $\delta$函数：是一个没有密度的概率测度，任何含有点$x$的集合其$\delta_x$的值为1，$\delta_x$也当做点质量；
+经验测度：对于样本$X_1,X_2,&amp;hellip;X_n$，其为
+$$\mathcal{P}_ n(A)=\frac{1}{n}\sum_{i=1}^n \delta_{X_i}(A)=\frac{1}{n}\sum_{i=1}^n I_A(X_i)$$
+如何理解经验测度？
+不知道客观真实的概率测度，因此收集一系列样本并计算相对频率； 指示函数或$\delta$函数表示一种计数功能； 经验测度是一个概率测度：$\mathcal{P}_ n(A)=\frac{1}{n}\sum_1^n\delta_{X_i}(A)=\frac{1}{n}\sum_{i=1}^n 1=\frac{1}{n}n=1$ 期望：对于一个分布$\mathcal{P}$，随机变量$X$可取值$\lbrace x_1,x_2,&amp;hellip;x_n\rbrace$，随机变量将样本空间的一个输出或几个输出映射到其一个值，$\mathcal{P}(x)$表示随机变量取值为$x$的概率，下面的$d\mathcal{P}(x)$表示$X=x$时的概率值，也是密度函数的积分单位区域面积值；
+$$\mathbf{E}[X]=\int xd\mathcal{P}(x)=\int xp(x)dx$$
+经验期望（样本期望）：一般是算样本的均值，作为总体期望的近似； </description>
+    </item>
+    
     <item>
       <title>Lecture 16 Gradient Flow</title>
       <link>https://optstats.github.io/2022/09/lecture-16-gradient-flow/</link>

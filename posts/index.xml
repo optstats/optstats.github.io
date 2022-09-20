@@ -7,7 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Wed, 07 Sep 2022 07:56:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Sep 2022 03:11:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 5 Empirical distributions and dimensionality reduction</title>
+      <link>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</link>
+      <pubDate>Tue, 20 Sep 2022 03:11:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</guid>
+      <description> 测度：是一个实值函数，映射一个集合到一个实数值，且满足三条性质
+非负：$u(A)\geq 0,\forall A\in X$ 可加性：$u(A\cup B)=u(A)+u(B),\forall A,B\in X$ $u(\emptyset)=0$ 概率测度：在整个空间上，测度的值为1；
+Dirac $\delta$函数：是一个没有密度的概率测度，任何含有点$x$的集合其$\delta_x$的值为1，$\delta_x$也当做点质量；
+经验测度：对于样本$X_1,X_2,&amp;hellip;X_n$，其为
+$$\mathcal{P}_ n(A)=\frac{1}{n}\sum_{i=1}^n \delta_{X_i}(A)=\frac{1}{n}\sum_{i=1}^n I_A(X_i)$$
+如何理解经验测度？
+不知道客观真实的概率测度，因此收集一系列样本并计算相对频率； 指示函数或$\delta$函数表示一种计数功能； 经验测度是一个概率测度：$\mathcal{P}_ n(A)=\frac{1}{n}\sum_1^n\delta_{X_i}(A)=\frac{1}{n}\sum_{i=1}^n 1=\frac{1}{n}n=1$ 期望：对于一个分布$\mathcal{P}$，随机变量$X$可取值$\lbrace x_1,x_2,&amp;hellip;x_n\rbrace$，随机变量将样本空间的一个输出或几个输出映射到其一个值，$\mathcal{P}(x)$表示随机变量取值为$x$的概率，下面的$d\mathcal{P}(x)$表示$X=x$时的概率值，也是密度函数的积分单位区域面积值；
+$$\mathbf{E}[X]=\int xd\mathcal{P}(x)=\int xp(x)dx$$
+经验期望（样本期望）：一般是算样本的均值，作为总体期望的近似； </description>
+    </item>
+    
+    <item>
+      <title>Distribution Zoo</title>
+      <link>https://optstats.github.io/2022/09/distribution-zoo/</link>
+      <pubDate>Thu, 15 Sep 2022 11:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/distribution-zoo/</guid>
+      <description>Bernoulli distribution
+对于一次随机试验，只有两种可能的输出，一个参数$\theta$刻画成功的概率 Binomial distribution
+进行$n$次随机实验，单次实验皆为伯努利试验，且伯努利成功概率参数为$\theta$，求$t$次成功的概率 $Bin(n,\theta)$ Categorical Distribution
+对于一次随机试验，试验的输出可能有$k$种，$k\geq 2$ Multinomial distribution
+进行$n$次随机试验，单次实验皆为类别分布试验，假设$k$类，因为$n$次实验，每类都有一定数目的输出$\lbrace x_1,x_2&amp;hellip;x_k\rbrace$，$p_i$表示在单次实验里第$i$类出现的概率 $p=\frac{n!}{x_1! x_2!&amp;hellip; x_k!}p_1^{x_1} p_2^{x_2}&amp;hellip;p_k^{x_k}$ 可以理解成基于一个多重集合排列问题的概率求解 Beta distribution
+描述一个概率的概率分布：例如，不知道硬币是否均匀，做多轮抛掷，每轮很多次抛投都有一个正面朝上概率，从而在多轮上得到关于正面朝上概率的分布； 二项分布可以看成进行多重伯努利实验得到的分布，beta分布可以看成进行多重二项分布得到的分布； 二项分布中，概率是参数，beta分布中，概率是随机变量：这里体会参数和变量的区别，想象一次函数的$k$和$x$，参数一般是控制模型且确定的数； Dirichlet distribution</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Weak Supervision via an Optimal Transport Approach</title>
+      <link>https://optstats.github.io/2022/09/bayesian-weak-supervision-via-an-optimal-transport-approach/</link>
+      <pubDate>Tue, 13 Sep 2022 11:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/bayesian-weak-supervision-via-an-optimal-transport-approach/</guid>
+      <description>Introduction weak supervision
+definition two-stage weak supervision
+first to infer the latent truth label then the latent label are used to train model weak source
+human experts automated heuristics If the sources are humans, we would like to obtain the ability of labelers.
+To see the paper how to model the relation between the latent truth label and weak label as the OT problem.
+post-hoc analysis
+The analysis afterwards you have done the researh, as some extra conclusions and analysis.</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Inference with Optimal Maps</title>
+      <link>https://optstats.github.io/2022/09/bayesian-inference-with-optimal-maps/</link>
+      <pubDate>Sat, 10 Sep 2022 09:56:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/bayesian-inference-with-optimal-maps/</guid>
+      <description>Abstract How to do Markov chain simulation and how to avoid it? The map how to push forward the prior measure to the posterior measure. how about the existence and uniqueness of measure-preserving map? How to explicitly parameterize the map and effciently compute? The computational bottlenecks of MCMC. </description>
+    </item>
+    
     <item>
       <title>Lecture 2 Cyclical Monotonicity and Kantorovich Problem</title>
       <link>https://optstats.github.io/2022/09/lecture-2-cyclical-monotonicity-and-kantorovich-problem/</link>

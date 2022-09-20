@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/math-612/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/optimal-transport/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/posts/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/</loc>
+    <lastmod>2022-09-20T03:11:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/distribution/</loc>
+    <lastmod>2022-09-15T11:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/distribution-zoo/</loc>
+    <lastmod>2022-09-15T11:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/bayesian-inference/</loc>
+    <lastmod>2022-09-13T11:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/bayesian-weak-supervision-via-an-optimal-transport-approach/</loc>
+    <lastmod>2022-09-13T11:56:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/bayesian-inference-with-optimal-maps/</loc>
+    <lastmod>2022-09-10T09:56:58+05:30</lastmod>
+  </url><url>
     <loc>https://optstats.github.io/tags/b.hamfeldt/</loc>
     <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
@@ -9,18 +42,6 @@
     <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/math-707/</loc>
-    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/tags/optimal-transport/</loc>
-    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/</loc>
-    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/posts/</loc>
-    <lastmod>2022-09-07T07:56:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/tags/</loc>
     <lastmod>2022-09-07T07:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/09/ot-cleaner-label-correction-as-optimal-transport/</loc>
@@ -33,9 +54,6 @@
     <lastmod>2022-09-02T04:56:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/09/lecture-16-gradient-flow/</loc>
-    <lastmod>2022-09-01T04:01:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/tags/math-612/</loc>
     <lastmod>2022-09-01T04:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/09/lecture-15-wasserstein-curves/</loc>
