@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>An Introduction to Optimization on optstats</title>
+    <link>https://optstats.github.io/tags/an-introduction-to-optimization/</link>
+    <description>Recent content in An Introduction to Optimization on optstats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Fri, 23 Sep 2022 03:16:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/an-introduction-to-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Introduction to Optimizaiton</title>
+      <link>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</link>
+      <pubDate>Fri, 23 Sep 2022 03:16:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</guid>
+      <description>Chapter 6. Basics of Set-Constrained and Unconstrained Optimizaiton 6.1 Introduction objective function/cost function
+decision variables
+constraint set/feasiable set
+extremizers
+minimizer maximizer constrained optimization problem
+unconstrained opitmization problem: $\Omega=R^n$
+minimizer
+local minimizer What we often to find multiple global minimizer It is difficult to find. strict 6.2 Condition for Local Minimizers gradient and Hessian
+feasiable direction
+Why: a minimizer may be lie either in the interior or on the boundary of $\Omega$.</description>
+    </item>
+    
+  </channel>
+</rss>

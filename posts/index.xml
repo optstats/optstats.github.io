@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 20 Sep 2022 03:11:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 03:16:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Introduction to Optimizaiton</title>
+      <link>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</link>
+      <pubDate>Fri, 23 Sep 2022 03:16:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</guid>
+      <description>Chapter 6. Basics of Set-Constrained and Unconstrained Optimizaiton 6.1 Introduction objective function/cost function
+decision variables
+constraint set/feasiable set
+extremizers
+minimizer maximizer constrained optimization problem
+unconstrained opitmization problem: $\Omega=R^n$
+minimizer
+local minimizer What we often to find multiple global minimizer It is difficult to find. strict 6.2 Condition for Local Minimizers gradient and Hessian
+feasiable direction
+Why: a minimizer may be lie either in the interior or on the boundary of $\Omega$.</description>
+    </item>
+    
     <item>
       <title>Lecture 5 Empirical distributions and dimensionality reduction</title>
       <link>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</link>
