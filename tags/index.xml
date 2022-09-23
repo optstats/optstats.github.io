@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 23 Sep 2022 03:16:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 10:23:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimization theory and methods</title>
+      <link>https://optstats.github.io/tags/optimization-theory-and-methods/</link>
+      <pubDate>Fri, 23 Sep 2022 10:23:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/optimization-theory-and-methods/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>An Introduction to Optimization</title>
       <link>https://optstats.github.io/tags/an-introduction-to-optimization/</link>
@@ -81,20 +90,20 @@
     </item>
     
     <item>
-      <title>Convex Optimization</title>
-      <link>https://optstats.github.io/tags/convex-optimization/</link>
-      <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
-      
-      <guid>https://optstats.github.io/tags/convex-optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cxt</title>
       <link>https://optstats.github.io/tags/cxt/</link>
       <pubDate>Sun, 28 Aug 2022 23:01:58 +0530</pubDate>
       
       <guid>https://optstats.github.io/tags/cxt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convex Optimization</title>
+      <link>https://optstats.github.io/tags/convex-optimization/</link>
+      <pubDate>Sat, 27 Aug 2022 14:01:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/tags/convex-optimization/</guid>
       <description></description>
     </item>
     

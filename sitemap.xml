@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://optstats.github.io/2022/09/lecture-5-duality-theory/</loc>
+    <lastmod>2022-09-23T10:23:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/optimization-theory-and-methods/</loc>
+    <lastmod>2022-09-23T10:23:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/</loc>
+    <lastmod>2022-09-23T10:23:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/posts/</loc>
+    <lastmod>2022-09-23T10:23:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/</loc>
+    <lastmod>2022-09-23T10:23:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/lecture-4-constrained-optimization/</loc>
+    <lastmod>2022-09-23T10:22:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/2022/09/lecture-3-unconstrained-optimization/</loc>
+    <lastmod>2022-09-23T09:21:58+05:30</lastmod>
+  </url><url>
     <loc>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</loc>
     <lastmod>2022-09-23T03:16:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/tags/an-introduction-to-optimization/</loc>
-    <lastmod>2022-09-23T03:16:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/</loc>
-    <lastmod>2022-09-23T03:16:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/posts/</loc>
-    <lastmod>2022-09-23T03:16:58+05:30</lastmod>
-  </url><url>
-    <loc>https://optstats.github.io/tags/</loc>
     <lastmod>2022-09-23T03:16:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/09/lecture-5-empirical-distributions-and-dimensionality-reduction/</loc>
@@ -74,9 +86,6 @@
     <loc>https://optstats.github.io/2022/08/lecture-14-wasserstein-space/</loc>
     <lastmod>2022-08-30T02:01:58+05:30</lastmod>
   </url><url>
-    <loc>https://optstats.github.io/tags/convex-optimization/</loc>
-    <lastmod>2022-08-28T23:01:58+05:30</lastmod>
-  </url><url>
     <loc>https://optstats.github.io/tags/cxt/</loc>
     <lastmod>2022-08-28T23:01:58+05:30</lastmod>
   </url><url>
@@ -85,6 +94,9 @@
   </url><url>
     <loc>https://optstats.github.io/2022/08/lecture-10-%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA/</loc>
     <lastmod>2022-08-28T15:01:58+05:30</lastmod>
+  </url><url>
+    <loc>https://optstats.github.io/tags/convex-optimization/</loc>
+    <lastmod>2022-08-27T14:01:58+05:30</lastmod>
   </url><url>
     <loc>https://optstats.github.io/2022/08/lecture-3-%E5%87%B8%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2022-08-27T14:01:58+05:30</lastmod>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Lecture 4 Constrained Optimization - optstats</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Lecture 4 Constrained Optimization">
+<meta itemprop="description" content="The note of Mooc course from NJU."><meta itemprop="datePublished" content="2022-09-23T10:22:58+05:30" />
+<meta itemprop="dateModified" content="2022-09-23T10:22:58+05:30" />
+<meta itemprop="wordCount" content="104">
+<meta itemprop="keywords" content="Optimization theory and methods," /><meta property="og:title" content="Lecture 4 Constrained Optimization" />
+<meta property="og:description" content="The note of Mooc course from NJU." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://optstats.github.io/2022/09/lecture-4-constrained-optimization/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-23T10:22:58+05:30" />
+<meta property="article:modified_time" content="2022-09-23T10:22:58+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lecture 4 Constrained Optimization"/>
+<meta name="twitter:description" content="The note of Mooc course from NJU."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://optstats.github.io/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://optstats.github.io/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://optstats.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://optstats.github.io/">
+				<img src="/icon.jpeg" alt="optstats" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://optstats.github.io/">optstats</a></h1>
+	<div class="site-description"><p>Notebooks</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/optstats" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+    
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+    integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5"
+    crossorigin="anonymous">
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+    integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+    crossorigin="anonymous"></script>
+
+<script defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+            ],
+            throwOnError : false
+        });
+    });
+</script>
+
+
+
+
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Sep 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Lecture 4 Constrained Optimization</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<h3 id="41-约束优化概述">4.1 约束优化概述</h3>
+<ol>
+<li>
+<p>两个可以形式化为约束优化问题的案例：低秩矩阵补全和低秩矩阵恢复</p>
+</li>
+<li>
+<p>矩阵补全：</p>
+<ul>
+<li>通过已知元素，来补全矩阵的未知元素</li>
+<li>矩阵补全往往要求补全矩阵的秩最小（目标函数），因为现实大规模数据矩阵一般是低秩的；</li>
+<li>低秩矩阵：$rank(X)\leq m$，$rank(X)\leq n$；</li>
+<li>数学模型：$$ min\ rank(X)$$ $$s.t. X_{ij}=M_{ij} \ i,j\in \Omega$$ 其中，$M$表示原矩阵，$\Omega$表示已知元素下标的集合。</li>
+<li>上式目标函数是一个非凸函数，无法保证全局最优，且<strong>计算复杂，是一个NP难问题</strong>，研究论文有指出用一个<strong>矩阵核范数</strong>（奇异值和）近似秩，得到一个如下凸松弛：</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>$$ min\ ||X||_\ast$$</p>
+<p>$$s.t.\ X_{ij}=M_{ij} \ i,j\in \Omega$$</p>
+<hr>
+<p>假定矩阵观测值是含有噪声的$Y=M+Z$，则有研究如下模型：</p>
+<p>$$ min\ ||X||_{\ast}$$</p>
+<p>$$s.t.\ ||P_{\Omega}(X-Y)_F||\leq \delta$$</p>
+<ol start="3">
+<li>低秩矩阵恢复：
+<ul>
+<li>清晰的图片往往是低秩的，有噪声存在，往往会提高秩；</li>
+<li>秩在图片中表示包含的信息丰富程度；</li>
+<li>数学模型：观察M=低秩X+稀疏噪声S $$min_{X,S\in R^{m\ast n}} \ rank(X)+\lambda||S||_0$$ $$s.t.\ X+S=M$$</li>
+<li>由于目标函数两部分都是非凸（$l_0$范数和$rank$），所以常用凸松弛后的模型RPCA|LRSMD如下：</li>
+</ul>
+</li>
+</ol>
+<p>$$min_{X,S\in R^{m\ast n}} \ ||X||_*+\lambda||S||_1$$</p>
+<p>$$s.t.\ X+S=M$$</p>
+<h3 id="42-约束优化的一阶最优性条件1">4.2 约束优化的一阶最优性条件1</h3>
+<ol>
+<li>无约束最优性条件主要跟目标函数有关，约束优化最优性条件还跟约束函数有关；</li>
+<li>有效约束$g(x^\ast)=0$与非有效约束$g(x^\ast)&lt;0$，其中$x^\ast$是可行域中点；</li>
+</ol>
+<p><strong>如何理解有效约束？</strong></p>
+<ol start="3">
+<li>有效约束指标集：可行解满足等式约束的相应等式指标、可行解满足不等式约束取等时（有效约束）的相应等式指标；</li>
+<li>对于一个可行点，可以谈论其有效指标集是什么；</li>
+</ol>
+<p><strong>方向</strong></p>
+<ol start="5">
+<li>
+<p>可行方向：$x^\ast \in\Omega,0\neq \mathbf{d}\in R^n$，如果$\exists \delta&gt;0,\ \forall t\in[0,\delta]$，使$(x^\ast +t\mathbf{d})\in\Omega$，则称$d$为$x^\ast$处的一个可行方向；</p>
+</li>
+<li>
+<p>可行方向不唯一，沿可行方向走可仍然在可行域内，一个可行点处所有可行方向构成一个集合$FD(x^*)$；</p>
+</li>
+<li>
+<p>直接判断一个方向是可行方向不好做，引出线性化可行方向$d$：
+$$d^T\nabla h_i(x^\ast)=0, i\in E$$
+$$d^T\nabla g_i(x^\ast)\leq 0, i \in I(x^\ast) $$
+从一阶泰勒展开，即线性化的角度，判断可行方向的数学形式化条件&mdash;线性可行方向，
+注意，在上述定义可以看到不等式约束只关注满足不等式有效约束的解（边界上的点），因为满足不等式非有效约束的点在内部，总是存在可行方向的；</p>
+</li>
+<li>
+<p>一个可行方向都可以推出其是线性可行方向$FD(x^\ast)\subseteq LFD(x^\ast)$：利用泰勒展开，在初始$x^\ast$处符合有效约束，在方向末端$x$处符合约束等式或不等式，同除$\delta$求极限；</p>
+</li>
+<li>
+<p>如何求一点处的可行方向集？</p>
+</li>
+<li>
+<p>使$FD(x^\ast)=LFD(x^\ast)$的两种约束规范:</p>
+<ul>
+<li>$c_i(x^\ast),i\in A(x^\ast)$是线性函数：所有有效约束的函数的线性的；</li>
+<li>$\nabla c_i(x^\ast),i\in A(x^\ast)$线性无关：所有有效约束的梯度向量是线性无关的；</li>
+</ul>
+</li>
+</ol>
+<p><strong>什么是方向导数?如何求？跟梯度什么关系？</strong></p>
+<ol start="11">
+<li>
+<p>下降方向：沿方向d的一阶方向导数小于0，则d是下降方向，表达为$D(x^\ast)=\lbrace d|d^T\nabla f(x^\ast)&lt;0\rbrace$</p>
+<ul>
+<li>感觉上面的表述有点问题，可以这样理解：梯度是函数上升（最快）的方向，与梯度正交的是切线方向，与梯度夹角为负的是函数的下降方向（负梯度下降最快）；</li>
+<li>方向导数是不是可以理解成，梯度在该方向上的投影（做向量内积运算）？</li>
+</ul>
+</li>
+<li>
+<p>约束优化几何一阶最优性条件：在局部极小点处没有可行下降方向；$$FD(x^\ast)\cap DD(x^\ast)=\emptyset$$
+也就是说，如果在一个点可以找到可行方向和下降方向，那么该点就不是局部极小点。</p>
+</li>
+</ol>
+<h3 id="43-约束优化的一阶最优性条件2">4.3 约束优化的一阶最优性条件2</h3>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/optimization-theory-and-methods">Optimization theory and methods</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+			
+			<div class="back">
+				<a href="https://optstats.github.io/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+			<div class="back">
+				
+			</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'optstats-github-io';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the </a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Copyright notice </div>
+		
+	</nav>
+</div><script>feather.replace()</script>
+</body>
+</html>

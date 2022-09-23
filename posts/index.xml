@@ -7,7 +7,66 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Fri, 23 Sep 2022 03:16:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 10:23:58 +0530</lastBuildDate><atom:link href="https://optstats.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 5 Duality Theory</title>
+      <link>https://optstats.github.io/2022/09/lecture-5-duality-theory/</link>
+      <pubDate>Fri, 23 Sep 2022 10:23:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-5-duality-theory/</guid>
+      <description>5.1 拉格朗日对偶函数 拉格朗日函数与拉格朗日对偶函数：后者是拉格朗日函数的最小值 为什么用对偶： 原问题不好解（非凸、NP-hard等），通过对偶问题得到原问题的解（某些条件，解等价时）或解信息（如原问题解的下界） 探究原问题解的存在性等理论性质 转换成对偶问题，探究问题之间的等价联系 不等式约束的乘子$\lambda$是负的，导致是拉格朗日函数是小于等于原函数的 对偶函数是原问题最优值的一个下界（注意不是下确界）：对偶函数小于等于原函数任一可行解处的函数值，也就小于最优可行解的函数值 5.2 拉格朗日对偶问题 找原问题的最优值可能是困难的，转而找对偶函数，即找原问题最优值的一个下界 拉格朗日对偶问题：如何找最好的一个下界，即越接近原问题最优值的下界，应该是最大的下界，所以问题转化为极大化对偶函数 $$max\ d(\lambda,\mu) \ s.t. \lambda\geq 0$$ 最优拉格朗日乘子：一组$\lambda^\ast,\mu^\ast$是拉格朗日对偶问题的最优解 无论原问题的凸性，拉格朗日对偶问题总是一个凸优化问题（求解过程中，注意原函数的和对偶函数的凸性） 为什么拉格朗日对偶函数是一个凹问题，关于$\lambda$和$\mu$的线性规划逐点求最小值为啥是一个凹的问题？ 拉格朗日对偶问题是一个$max$-$min$问题 如果交换$max$-$min$的顺序，我们发现拉格朗日函数的先$max$后$min$就是原问题 对偶变量：一般是$\lambda$，也即对偶问题是关于参数的函数 有时候无法显示的用对偶变量表示原变量，这时我们可以将最优条件公式直接作为对偶问题的约束条件 5.3 从零和博弈看对偶问题 零和博弈（$F(x,y)$表示$P$给$H$的）的双方一个$P$是$min$-$max$，即先$max$，最坏情况，支付出去的，$\sum_yF(x,y)$；一个H是$max$-$min$，即先$min$，最坏情况，收入最少的$\sum_xF(x,y)$；双方是对偶的（可以联系线性规划的对偶问题，两个角度由同一个问题关联纠缠） 5.4 对偶定理 弱对偶定理：$d(\bar\lambda,\bar\mu)\leq f(\bar x)$，这里括号内分别是原问题和对偶问题的可行解 原问题的最优值一定大于等于对偶问题的最优值，即$max\ d(\lambda,\mu)\leq min \ f(x)$ 对偶间隙：$v(P)-v(D)$，原问题最小值和对偶问题最大值之间的差 线性规划，对偶间隙为0，一般非线性规划，不为0 </description>
+    </item>
+    
+    <item>
+      <title>Lecture 4 Constrained Optimization</title>
+      <link>https://optstats.github.io/2022/09/lecture-4-constrained-optimization/</link>
+      <pubDate>Fri, 23 Sep 2022 10:22:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-4-constrained-optimization/</guid>
+      <description>4.1 约束优化概述 两个可以形式化为约束优化问题的案例：低秩矩阵补全和低秩矩阵恢复
+矩阵补全：
+通过已知元素，来补全矩阵的未知元素 矩阵补全往往要求补全矩阵的秩最小（目标函数），因为现实大规模数据矩阵一般是低秩的； 低秩矩阵：$rank(X)\leq m$，$rank(X)\leq n$； 数学模型：$$ min\ rank(X)$$ $$s.t. X_{ij}=M_{ij} \ i,j\in \Omega$$ 其中，$M$表示原矩阵，$\Omega$表示已知元素下标的集合。 上式目标函数是一个非凸函数，无法保证全局最优，且计算复杂，是一个NP难问题，研究论文有指出用一个矩阵核范数（奇异值和）近似秩，得到一个如下凸松弛： $$ min\ ||X||_\ast$$
+$$s.t.\ X_{ij}=M_{ij} \ i,j\in \Omega$$
+假定矩阵观测值是含有噪声的$Y=M+Z$，则有研究如下模型：
+$$ min\ ||X||_{\ast}$$
+$$s.t.\ ||P_{\Omega}(X-Y)_F||\leq \delta$$
+低秩矩阵恢复： 清晰的图片往往是低秩的，有噪声存在，往往会提高秩； 秩在图片中表示包含的信息丰富程度； 数学模型：观察M=低秩X+稀疏噪声S $$min_{X,S\in R^{m\ast n}} \ rank(X)+\lambda||S||_0$$ $$s.t.\ X+S=M$$ 由于目标函数两部分都是非凸（$l_0$范数和$rank$），所以常用凸松弛后的模型RPCA|LRSMD如下： $$min_{X,S\in R^{m\ast n}} \ ||X||_*+\lambda||S||_1$$
+$$s.t.\ X+S=M$$
+4.2 约束优化的一阶最优性条件1 无约束最优性条件主要跟目标函数有关，约束优化最优性条件还跟约束函数有关； 有效约束$g(x^\ast)=0$与非有效约束$g(x^\ast)&amp;lt;0$，其中$x^\ast$是可行域中点； 如何理解有效约束？
+有效约束指标集：可行解满足等式约束的相应等式指标、可行解满足不等式约束取等时（有效约束）的相应等式指标； 对于一个可行点，可以谈论其有效指标集是什么； 方向
+可行方向：$x^\ast \in\Omega,0\neq \mathbf{d}\in R^n$，如果$\exists \delta&amp;gt;0,\ \forall t\in[0,\delta]$，使$(x^\ast +t\mathbf{d})\in\Omega$，则称$d$为$x^\ast$处的一个可行方向；
+可行方向不唯一，沿可行方向走可仍然在可行域内，一个可行点处所有可行方向构成一个集合$FD(x^*)$；</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3 Unconstrained Optimization</title>
+      <link>https://optstats.github.io/2022/09/lecture-3-unconstrained-optimization/</link>
+      <pubDate>Fri, 23 Sep 2022 09:21:58 +0530</pubDate>
+      
+      <guid>https://optstats.github.io/2022/09/lecture-3-unconstrained-optimization/</guid>
+      <description>3.1 无约束优化概述 线性回归
+均方误差MSE，具有好的几何特性（试图找到一条直线，使平面上点到直线的欧式距离和最小） $$min_{w,b} \sum_{i=l}^n [f(x_i)-y_i]^2$$ 最小二乘是关于$w,b$的无约束优化问题 根据实际问题确定不同优化目标
+误差绝对值和最小，MAE $$min_{w,b} \sum_{i=l}^n |w^Tx_i+b-y_i|$$ 保证最大偏差最小化，$$min\ max_{w,b} \sum_{i=l}^n |w^Tx_i+b-y_i|$$ 线性回归解不唯一时：带正则项的线性回归选择性质不同的解
+想要得到一个稀疏的解，解中非零的个数尽可能少，可以用$l_0$和$l_1$范数，其中$\widehat{w}=&amp;lt;w,b&amp;gt;$ $$min_{w,b} \sum_{i=l}^n [f(x_i)-y_i]^2+\mu||\widehat{w}||_1$$ 平衡模型拟合和解的光滑性，使用$l_2$范数，使目标函数是严格凸的，利于优化 $$min_{w,b} \sum_{i=l}^n [f(x_i)-y_i]^2+\mu||\widehat{w}||_2^2$$ Logistic回归
+$h(x)$表示样本为+的概率，$1-h(x)$表示样本为-的概率； 用线性回归预测的值去逼近真实类别的对数比值，也称之为对数几率回归； $$h(x)=\frac{1}{1+e^{-z}}=\frac{1}{1+e^{w^Tx+b}}$$
+$$ln\frac{h(x)}{1-h(x)}=w^Tx+b$$
+如何确定$h(x)$中$w,b$的值？
+如果用MSE，其不是凸函数，所以逻辑回归用对数似然来求参数最优 $$max\ ln L(w,b)=\sum_{i}^{n}y_i lnh(x_i)+(1-y_i)ln(1-h(x_i))$$
+$$min_{w,b}\ -ln L(w,b)=-\sum_{i}^{n}y_i lnh(x_i)+(1-y_i)ln(1-h(x_i))$$
+可见逻辑回归的对数似然是一个无约束优化问题，且海森阵半正定，所以其也是一凸优化问题。
+有约束优化问题可以转化成无约束来用无约束优化求解技术进行求解。有哪些转化呢？ 3.2 无约束优化的一阶最优条件 最优解
+类别：全局最优、局部最优（$\delta$邻域） 通常全局最优是很难的，验证一个点是局部最优： 与附近所有点的函数值进行比较&amp;mdash;NO!； 光滑函数可利用函数性质看是否局部最优，比如一阶导数（梯度），二阶导数（海森矩阵）； 一阶必要条件：若$x^\ast$为局部极小点，则$\nabla f(x^\ast)=0$；
+目标函数在局部极小点处的任意方向导数均为0，即目标函数的切平面是水平的。
+什么叫方向导数？为0的不是梯度向量吗？ 对任意方向$d$, 有$d^T\nabla f(x^\ast)=\mathbf{0}$； 稳定（驻）点：对于多元函数，梯度为0的点也一样，未必是极值点（极大、极小），可能是鞍点，因此确定一个稳定点是极值点，还需要确定该点处的二阶导数；
+3.3 无约束优化的二阶最优条件 二阶必要条件：若$x^*$为局部极小点，则$f$在$x^\ast$的邻域内二阶可微，则$\nabla f(x^\ast)=0$且$\nabla^2f(x^\ast)$半正定。
+一二阶必要条件的证明：反证法，利用方向向量+泰勒展开证明；
+泰勒的一元和多元展开
+二阶充分条件：$f$二阶连续可微（二阶只说可微呢？），$\nabla f(x^\ast)=0$且$\nabla^2 f(x^\ast)$正定，则$x^\ast$是严格局部极小点；
+必要条件是否是充分条件的一个典型反例：$f(x)=x^3$；
+二阶充分条件不一定是二阶必要条件，所以对于无约束优化问题，不存在二阶的充分必要条件，例如$f(x)=x^4$；
+极大值点，二阶负定；</description>
+    </item>
+    
     <item>
       <title>An Introduction to Optimizaiton</title>
       <link>https://optstats.github.io/2022/09/an-introduction-to-optimizaiton/</link>
