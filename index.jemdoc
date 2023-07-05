@@ -1,10 +1,12 @@
-# jemdoc: menu{MENU}{index.html}, addcss{example.css}, nofooter  
-@css example.css
+# jemdoc: menu{MENU}{index.html}, nofooter  
+# addcss{jemdoc.css}
+
+
 == Shadow Feng
 
 ~~~
 {}{img_left}{photos/me.jpeg}{alt text}{131}{160}{http://people.kth.se/~euhanna/}
-Ms Student,\n [http://en.cs.ustc.edu.cn/main.htm CS Department], \n[https://en.ustc.edu.cn University of Science and Technology of China (USTC)]\n
+Ms Student,\n [http://en.cs.ustc.edu.cn/main.htm CS Department], \n[https://en.ustc.edu.cn University of Science and Technology of China]\n
 #Osquldas v\&aumlg 10 \n
 Hefei, China \n
 #100 44 Stockholm, Sweden \n 
