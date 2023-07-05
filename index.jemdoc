@@ -1,6 +1,5 @@
-# jemdoc: menu{MENU}{index.html}  
-#, nofooter  
-
+# jemdoc: menu{MENU}{index.html}, addcss{example.css}, nofooter  
+@css example.css
 == Shadow Feng
 
 ~~~
