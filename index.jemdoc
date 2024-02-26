@@ -3,7 +3,7 @@
 # addcss{jemdoc.css}
 
 
-== Shadew Feng
+== Chuanwen Feng
 
 ~~~
 {}{img_left}{photos/avatar.jpg}{alt text}{131}{160} #{http://people.kth.se/~euhanna/}
@@ -13,14 +13,15 @@ Hefei, China \n
 #100 44 Stockholm, Sweden \n 
 #Phone: \+46 8 790 7000 \n
 #Fax: \+46 8 790 7329\n
-E-mail: /chuanwen/ \[@\] mail \[DOT\] ustc \[DOT\] edu \[DOT\] cn
+E-mail: /chuanwen/ \[@\] mail \[DOT\] ustc \[DOT\] edu \[DOT\] cn \n 
+GitHub: [https://github.com/optstats]
 ~~~
 
 == About me
 #I received the B.S. and M.Sc. degrees in computer engineering from Iran University of Science and Technology ([http://www.iust.ac.ir IUST]), and the [http://ece.ut.ac.ir/ University of Tehran], Iran, in 2005 and 2008, respectively. In April 2015, I received the PhD degree in Telecommunications under the supervision of 
 # [http://www.people.kth.se/~mikaelj/ Prof. Mikael Johansson] and  [http://www.people.kth.se/~carlofi/ Prof. Carlo Fischione] at [http:www.kth.se KTH].  
 
-Currently, I am a master student major in computer science, supervised by [http://staff.ustc.edu.cn/~xkxie/index-en.html  Prof. Xike Xie] at [http://en.ustc.edu.cn/ USTC].
+Currently, I am a graduate student major in computer science, supervised by [http://staff.ustc.edu.cn/~xkxie/index-en.html  Prof. Xike Xie] at [http://en.ustc.edu.cn/ USTC].
 
 
 
@@ -40,6 +41,7 @@ My research interests include
 . Chuanwen Feng, Yilong Ren and Xike Xie, \"OT-Filter: OT-Filter: An Optimal Transport Filter for Learning with Noisy Labels\", In IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023. \[[https://openaccess.thecvf.com/content/CVPR2023/papers/Feng_OT-Filter_An_Optimal_Transport_Filter_for_Learning_With_Noisy_Labels_CVPR_2023_paper.pdf pdf] \] \[[files/code.zip code]\]
 #[code](./files/code.zip) 
 #. Chuanwen Feng, Wenlong Chen, Xike Xie and Kevin Zhou
+
 
 
 
