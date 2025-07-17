@@ -14,22 +14,22 @@ Hefei, China \n
 #Phone: \+46 8 790 7000 \n
 #Fax: \+46 8 790 7329\n
 E-mail: /chuanwen/ \[@\] mail \[DOT\] ustc \[DOT\] edu \[DOT\] cn \n 
-GitHub: [https://github.com/optstats]
+# GitHub: [https://github.com/optstats]
 ~~~
 
 == About me
 #I received the B.S. and M.Sc. degrees in computer engineering from Iran University of Science and Technology ([http://www.iust.ac.ir IUST]), and the [http://ece.ut.ac.ir/ University of Tehran], Iran, in 2005 and 2008, respectively. In April 2015, I received the PhD degree in Telecommunications under the supervision of 
 # [http://www.people.kth.se/~mikaelj/ Prof. Mikael Johansson] and  [http://www.people.kth.se/~carlofi/ Prof. Carlo Fischione] at [http:www.kth.se KTH].  
 
-Currently, I am a graduate student major in computer science, supervised by [http://staff.ustc.edu.cn/~xkxie/index-en.html  Prof. Xike Xie] at [http://en.ustc.edu.cn/ USTC].
-
+Currently, I am applying for Ph.D. programs. 
+#I hold an M.Eng. in Computer Technology from [http://en.ustc.edu.cn/ USTC], where I was supervised by [http://staff.ustc.edu.cn/~xkxie/index-en.html  Prof. Xike Xie] and [https://scholar.google.com/citations?user=8eNm2GMAAAAJ&hl=en Prof. S.Kevin Zhou], and a B.Eng. in Computer Science and Technology from [https://www.gzu.edu.cn/en/ Guizhou University].
 
 
 == Research
 My research interests include 
-- Optimal Transport 
-- Trustworthy Machine Learning
-- Bayesian Learning
+- Optimal Transport  
+- Machine Learning
+- Statistics
 
 #- Real-time Sensor Networking
 #- Wireless Networks
@@ -38,7 +38,12 @@ My research interests include
 # [research.html Find out more].
 
 === Recent Publications 
-. Chuanwen Feng, Yilong Ren and Xike Xie, \"OT-Filter: OT-Filter: An Optimal Transport Filter for Learning with Noisy Labels\", In IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023. \[[https://openaccess.thecvf.com/content/CVPR2023/papers/Feng_OT-Filter_An_Optimal_Transport_Filter_for_Learning_With_Noisy_Labels_CVPR_2023_paper.pdf pdf] \] \[[files/code.zip code]\]
+. Chuanwen Feng, Yilong Ren and Xike Xie, \"OT-Filter: OT-Filter: An Optimal Transport Filter for Learning with Noisy Labels\", IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023. \[[https://openaccess.thecvf.com/content/CVPR2023/papers/Feng_OT-Filter_An_Optimal_Transport_Filter_for_Learning_With_Noisy_Labels_CVPR_2023_paper.pdf pdf] \] 
+#\[[files/code.zip code]\]
+. Yilong Ren, Chuanwen Feng, Xike Xie, S.Kevin Zhou, \"Partial Optimal Transport Based Out-of- Distribution Detection for Open-Set Semi-Supervised Learning\", Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence. 2024. \[[https://www.ijcai.org/proceedings/2024/536 pdf] \]  
+. Wenlong Chen, Chuanwen Feng, Ao Ke, Xike Xie, S.Kevin Zhou, \"Out-of-Distribution Detection for Learning-Based Chest X-Ray Diagnosis.\" IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). 2024. \[[https://ieeexplore.ieee.org/document/10447414/ pdf]\]
+. Ao Ke, Wenlong Chen, Chuanwen Feng, Yukun Cao, Xike Xie, S.Kevin Zhou, Lei Feng, \"Prototype-based Optimal Transport for Out-of-Distribution Detection.\", Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence. 2025. 
+. Chuanwen, Feng, Wenlong Chen et al, \"Detecting Out-of-Distribution Samples via Conditional Distribution Entropy with Optimal Transport.\" arXiv preprint arXiv:2401.11726 (2024). \[[https://arxiv.org/abs/2401.11726 pdf]\]
 #[code](./files/code.zip) 
 #. Chuanwen Feng, Wenlong Chen, Xike Xie and Kevin Zhou
 
