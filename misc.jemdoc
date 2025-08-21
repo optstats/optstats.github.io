@@ -1,0 +1,32 @@
+# jemdoc: menu{MENU}{misc.html}
+#, nofooter  
+# addcss{jemdoc.css} 
+
+== Reading List
+
+=== Real Analysis and Measure Theory 
+. [https://link.springer.com/book/10.1007/978-1-4939-2712-8 Understanding Analysis] by Stephen Abbott.
+. [https://link.springer.com/book/10.1007/978-1-4471-0645-6 Measure, Integral and Probability] by Marek Capiński, Peter Ekkehard Kopp.
+. [https://measure.axler.net/ Measure, Integration & Real Analysis] by [https://www.axler.net/ Sheldon Axler].
+
+=== Probability and Statistics 
+. [https://www.mit.edu/~dimitrib/probbook.html Introduction to Probability, 2nd Edition] by Dimitri P. Bertsekas and John N. Tsitsiklis.
+. [https://www.probabilitycourse.com/ Introduction to Probability, Statistics, and Random Processes] by Hossein Pishro-Nik.
+. [https://link.springer.com/book/10.1007/978-0-8176-8409-9 A Probability Path] by [https://people.orie.cornell.edu/sid/ Sidney I. Resnick].
+. [https://statistics.fas.harvard.edu/file_url/1049 Statistical Inference, 2nd Edition] by [https://archived.stat.ufl.edu/casella/ Georage Casella] and Roger L. Berger.
+
+=== Stochastic Analysis 
+. [https://www.worldscientific.com/worldscibooks/10.1142/3856\#t=aboutBook Elementary Stochastic Calculus, with Finance in View] by [https://web.math.ku.dk/~mikosch/ Thomas Mikosch].
+. [https://link.springer.com/book/9780387401010 Stochastic Calculus for Finance II Continuous-Time Models] by [https://www.math.cmu.edu/~shreve/ Steven Shreve].
+
+=== Optimal Transport  
+. [https://optimaltransport.github.io/book/ Computational Optimal Transport: With Applications to Data Science] by [https://www.gpeyre.com/ Gabriel Peyré] and [https://marcocuturi.net/ Marco Cuturi].
+
+
+
+== Open Access Lecture Notes
+
+#=== Computer Science, Machine Learning, and Mathematics
+- [https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/ CS 109] (Stanford), [https://personal.math.ubc.ca/~geoff/courses/W2019T1/Math612.html Math 612] (UBC), [https://ot.cs.uni-goettingen.de/teaching_cot.html Computational OT] (Uni Göttingen). 
+
+
