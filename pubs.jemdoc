@@ -3,7 +3,7 @@
 # addcss{jemdoc.css} 
 
 
-== Machine Learning with Optimal Transport
+== Course Report
 . *Chuanwen Feng*, Yilong Ren and Xike Xie, \"OT-Filter: An Optimal Transport Filter for Learning with Noisy Labels\", CVPR 2023. \[[https://openaccess.thecvf.com/content/CVPR2023/papers/Feng_OT-Filter_An_Optimal_Transport_Filter_for_Learning_With_Noisy_Labels_CVPR_2023_paper.pdf pdf]\] 
 #\[[files/code.zip code]\]
 . Yilong Ren, *Chuanwen Feng*, Xike Xie, S.Kevin Zhou, \"Partial Optimal Transport Based Out-of- Distribution Detection for Open-Set Semi-Supervised Learning\", IJCAI 2024. \[[https://www.ijcai.org/proceedings/2024/536 pdf]\]  
