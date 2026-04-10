@@ -7,13 +7,12 @@
 
 ~~~
 {}{img_left}{photos/pic.jpg}{alt text}{181}{} #{http://people.kth.se/~euhanna/}
-Research Assistant,\n 
+Research Assistant\n 
 #[http://en.cs.ustc.edu.cn/main.htm CS Department], \n
 #[https://en.ustc.edu.cn University of Science and Technology of China]\n
-[https://www.cityu.edu.hk/ma/ MA Department], \n
-[https://www.cityu.edu.hk/en City University of Hong Kong] \n
+[https://www.cityu.edu.hk/ma/ MA Department], [https://www.cityu.edu.hk/en CityU HK] \n
 #Osquldas v\&aumlg 10 \n
-Kowloon, HK
+#Kowloon, Hong Kong \n
 #Hefei, China \n
 #100 44 Stockholm, Sweden \n 
 #Phone: \+46 8 790 7000 \n
@@ -32,7 +31,7 @@ I am not familiar with W-distance.
 
 == Research
 My research interests include: 
-- Machine Learning
+- Machine Learning 
 - Statistics and Optimization
 - Optimal Transport  
 
