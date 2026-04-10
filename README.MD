@@ -6,8 +6,8 @@
 
 # Installation
 
-1. conda create -n jemdoc python=2.7 
-2. conda activate jemdoc 
-3. touch index.jemdoc and setup jemdoc.css 
+1. conda create -n py2 python=2.7 and conda activate py2
+2. touch index.jemdoc and setup jemdoc.css 
+3. in sub-dir: python ../jemdoc.py index.jemdoc 
 
 
