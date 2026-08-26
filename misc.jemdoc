@@ -1,5 +1,4 @@
-# jemdoc: menu{MENU}{misc.html}
-#, nofooter  
+# jemdoc: menu{MENU}{misc.html}, notime
 # addcss{jemdoc.css} 
 
 == Reading List
@@ -28,5 +27,3 @@
 
 #=== Computer Science, Machine Learning, and Mathematics
 - [https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/ CS 109] (Stanford), [https://personal.math.ubc.ca/~geoff/courses/W2019T1/Math612.html Math 612] (UBC), [https://ot.cs.uni-goettingen.de/teaching_cot.html Computational OT] (Uni Göttingen), etc.
-
-
